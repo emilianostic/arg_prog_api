@@ -28,7 +28,7 @@ const DivMaxMin = styled.div`
 const objectDay = {
   1: {
     "name": "Wednesday",
-    "date": "October 4"
+    "date": "October 4 Paraná, Entre Ríos"
   }
 };
 
