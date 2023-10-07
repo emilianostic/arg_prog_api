@@ -14,7 +14,7 @@ border-radius: 7%;
 	background-position: center center;
 `
 export const DivTextUV = styled.div`
-height: 100%;
+	height: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between`
