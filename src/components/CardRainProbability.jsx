@@ -9,7 +9,7 @@ const DivTextRainProbability = styled(DivTextUV)`
 
 `
 const RainProbabilityStyled = styled.p`
-font-size: 40px;
+font-size: 300%;
 text-align: center;
 `
 const RainProbabilitySymbol = {

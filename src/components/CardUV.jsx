@@ -3,11 +3,11 @@ import data from "./data"
 
 
 export const DivCardUV = styled.div`
-border-radius: 10px;
+border-radius: 7%;
 	background-color: rgb(107, 168, 221);
 	min-height: 190px;
 	font-weight: bold;
-	padding: 20px;
+	padding: 12%;
 	position: relative;
 	overflow: hidden;
 	background-size: cover;
@@ -20,7 +20,7 @@ height: 100%;
 	justify-content: space-between`
 
 const UVStyled = styled.p`
-font-size: 40px;
+font-size: 300%;
 text-align: center;
 `
 

@@ -9,7 +9,7 @@ export const DivCardActualTemp = styled.div`
     margin: 6.5% 
 `
 const PActualTemp = styled.p`
-font-size: 80px;
+font-size: 512%;
 `
 const weatherCodeInfo = {
     1 : {

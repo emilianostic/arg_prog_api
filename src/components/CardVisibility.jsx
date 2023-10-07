@@ -8,7 +8,7 @@ const DivTextVisibility = styled(DivTextUV)`
 
 `
 const VisibilityStyled = styled.p`
-font-size: 40px;
+font-size: 300%;
 text-align: center;
 `
 const visibilitySymbol = {

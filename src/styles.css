@@ -7,7 +7,7 @@
 body {
 	background: beige;
 	font-family: 'Roboto', sans-serif;
-	min-height: 100vh;
+	/*min-height: 100vh;*/
 		/* Flexbox */
 	 /*display: flex;*/
 	/*gap: 20px; */
@@ -20,6 +20,8 @@ body {
 
 .container{
 	display: flex;
+	
+	
 }
 .weather{
 	
