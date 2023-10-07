@@ -18,8 +18,7 @@ const TemperatureChart = ({ data }) => {
         borderColor: 'rgb(75, 192, 192)',
         tension: 0.1,
         responsive: true,
-        width: 500,
-        height: 400,
+       
         
       },
     ],

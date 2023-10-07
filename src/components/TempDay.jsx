@@ -7,13 +7,12 @@ const DivTempDay = styled.div`
 margin: 0% 3.8% 2% 0%;
 	border-radius: 10px;
 	background-color: rgb(226, 226, 213);
-	width: 80%;
+	width: 80vh;
+	height: 35vh;
 	font-weight: bold;
-	
+	display: flex;
+	items-align: center;
 	position: relative;
-	overflow: hidden;
-	background-size: cover;
-	background-position: center center;
 `
 const tempDay = () => {
 

@@ -28,9 +28,9 @@ const cardActualTemp = () => {
         <DivCardActualTemp >
        
           <h3>{weatherCodeInfo[code_sky_status].name}</h3>
-          <PActualTemp >☀️</PActualTemp >
+          <PActualTemp >☀️</PActualTemp>
        <p>25 °C</p>
-      </DivCardActualTemp >
+      </DivCardActualTemp>
     );
 }
 
