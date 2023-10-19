@@ -1,5 +1,6 @@
 import styled from "styled-components"
-import data from "./data"
+
+//import data from "./data"
 
 export const DivCardActualTemp = styled.div`
 	background-color: beige;
@@ -9,29 +10,26 @@ export const DivCardActualTemp = styled.div`
     margin: 6.5% 
 `
 const PActualTemp = styled.p`
-font-size: 512%;
+font-size: 80px;
 `
-const weatherCodeInfo = {
-    1 : {
-        "name": "Sunny",
-        "icon": " ☀️"
 
-    }
-};
 
-const code_sky_status = data["current_weather"]["weathercode"];
-console.log(code_sky_status)
+//const code_sky_status = 1;
 
-const cardActualTemp = () => {
 
+const CardActualTemp = ({actualTemp, weatherCode, weatherCode2}) => {
+   console.log(weatherCode)
     return(
-        <DivCardActualTemp >
-       
-          <h3>{weatherCodeInfo[code_sky_status].name}</h3>
-          <PActualTemp >☀️</PActualTemp>
-       <p>25 °C</p>
+        <DivCardActualTemp>
+          
+          <h3>{weatherCode2}</h3>
+          <PActualTemp >
+          
+          {weatherCode}
+          </PActualTemp>
+       <p>{actualTemp} °C</p>
       </DivCardActualTemp>
     );
 }
 
-export default cardActualTemp 
+export default CardActualTemp 

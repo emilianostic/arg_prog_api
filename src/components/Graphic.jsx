@@ -1,24 +1,21 @@
 
 import { Line  } from 'react-chartjs-2';
 import 'chart.js/auto'
-import data from "./data"
 
-for (let i = 0; i < data.hourly.time.length; i++) {
-  data.hourly.time[i] = data.hourly.time[i].split('T')[1];
-}
 
-const TemperatureChart = ({ data }) => {
+const TemperatureChart = ({ dailyTemp, hourlyTime  }) => {
   const chartData = {
     
     datasets: [
       {
         label: 'Temperature °C',
-        data: data.hourly.temperature_2m, // Array de temperaturas
+        data: dailyTemp, 
         fill: false,
         borderColor: 'rgb(75, 192, 192)',
         tension: 0.1,
         responsive: true,
-       
+        width: 500,
+        height: 400,
         
       },
     ],
@@ -27,24 +24,24 @@ const TemperatureChart = ({ data }) => {
     scales: {
       x: {
         type: 'category',
-        labels: data.hourly.time,
+        labels: hourlyTime,
         grid: {
           display: false
       },
       ticks: {
-          display: true // Esto muestra los valores del eje x
+          display: true 
       }
       },
 
       y: {
         type: 'linear',
-        labels: data.hourly.temperature_2m,
+        labels: dailyTemp,
         beginAtZero: true,
         grid: {
           display: false
       },
       ticks: {
-          display: true // Esto muestra los valores del eje x
+          display: true 
       }
       }
     },

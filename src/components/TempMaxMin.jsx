@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import data from "./data";
+
+
 const DivTempMaxMin = styled.div`
   border-radius: 10px;
   text-align: center;
@@ -25,45 +26,20 @@ const DivMaxMin = styled.div`
   font-family: "Roboto", sans-serif;
 `;
 
-const objectDay = {
-  1: {
-    "name": "Wednesday",
-    "date": "October 4 ▪️ Paraná, Entre Ríos"
-  }
-};
-
-const weekDay = data["current_weather"]["is_day"]
-const tempMaxMin = () => {
-
-const temperature = data.hourly.temperature_2m
 
 
-let maxTemperature = temperature[0]
-
-for (let i = 1; i < temperature.length; i++) {
-  if (temperature[i] > maxTemperature) {
-    maxTemperature = temperature[i];
-  }
-}
-
-let minTemperature = temperature[0]
-for (let i = 1; i < temperature.length; i++) {
-  if (temperature[i] < minTemperature) {
-    minTemperature = temperature[i];
-  }
-}
-
-
+const tempMaxMin = ({minTemperature_2m, maxTemperature_2m, dateFormat}) => {
+ 
   return (
     <DivTempMaxMin>
-      <h3>{objectDay[weekDay].name}</h3>
-      <h4>{objectDay[weekDay].date}</h4>
+      <h3>{dateFormat}</h3>
+     
       <DivMaxMin>
-        <p>{maxTemperature}°C</p>
+        <p>{minTemperature_2m}°C</p>
         <p>High</p>
       </DivMaxMin>
       <DivMaxMin>
-        <p>{minTemperature}°C</p>
+        <p>{maxTemperature_2m}°C</p>
         <p>Low</p>
       </DivMaxMin>
     </DivTempMaxMin>
