@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+//import logo from './logo.svg';
+import "./styles.css";
+//import Cards from './components/Cards'
+import TempDay from "./components/TempDay";
+import MeteoCards from "./components/MeteoCards";
+//import TempMaxMin from "./components/TempMaxMin";
+//import CardActualTemp from "./components/ActualTemp";
+import { DataContextProvider } from './context/DataContext'
+import MaxTempMinTemp from "./components/MaxTempMinTemp";
+import TempSky from "./components/ActualTempSky";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+ 
+  return (<>
+  <DataContextProvider> 
+    <div className="container">
+      <div className="weather">
+        <div className="temps">
+        <TempSky />
+        <TempDay />
+        </div>
+        
+        <div className="meteorology">
+          <MaxTempMinTemp/>
+          
+          <MeteoCards /> 
+          
+        </div>
+        
+      </div>
+      {/* <div className="traffic">
+        <TempDay />
+        <div className="meteorology">
+          <TempMaxMin />
+          <MeteoCards />
+        </div>
+      </div> */}
     </div>
-  );
+    </DataContextProvider>
+    
+    </>);
 }
 
 export default App;
