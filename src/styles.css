@@ -1,33 +1,30 @@
 * {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-	background: beige;
-	font-family: 'Roboto', sans-serif;
-	min-height: 100vh;
-		/* Flexbox */
-	 /*display: flex;*/
-	/*gap: 20px; */
+  background: beige;
+  font-family: "Roboto", sans-serif;
+  min-height: 100vh;
+  /* Flexbox */
+  /*display: flex;*/
+  /*gap: 20px; */
 
-	/* Grid 
+  /* Grid 
 	display: grid;
 	grid-template-columns: 3fr 1fr;
 	gap: 20px;*/
-}	
-
-.container{
-	display: flex;
 }
-.weather{
-	
-	min-height: 100vh;
-    width: 50%;
-    box-sizing: border-box;
-    
 
+.container {
+  display: flex;
+}
+.weather {
+  min-height: 100vh;
+  width: 50%;
+  box-sizing: border-box;
 }
 
 /* .high{
@@ -35,29 +32,32 @@ margin-bottom: 1%;
 margin-left: 29%;
 } */
 .meteorology {
-	display: flex;
-	background-color: beige;
-	
+  display: flex;
+  background-color: beige;
 }
-.traffic{
-	min-height: 100vh;
+.traffic {
+  min-height: 100vh;
 
-    width: 50%;
-    box-sizing: border-box;
-    
+  width: 50%;
+  box-sizing: border-box;
 }
 
 .temps {
-	display: flex;
-	align-items: center ;
+  display: flex;
+  align-items: center;
 }
 
-h3{
-	font-size: small;
-	color: rgb(24, 24, 12)
+h3 {
+  font-size: small;
+  color: rgb(24, 24, 12);
 }
 
-p{
-	color: rgb(43, 43, 75);
-	text-align: center;
+p {
+  color: rgb(43, 43, 75);
+  text-align: center;
+}
+
+.leaflet-container {
+  width: 100wh;
+  height: 100vh;
 }
