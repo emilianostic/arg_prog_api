@@ -5,41 +5,36 @@ import TempDay from "./components/TempDay";
 import MeteoCards from "./components/MeteoCards";
 //import TempMaxMin from "./components/TempMaxMin";
 //import CardActualTemp from "./components/ActualTemp";
-import { DataContextProvider } from './context/DataContext'
+import { DataContextProvider } from "./context/DataContext";
 import MaxTempMinTemp from "./components/MaxTempMinTemp";
 import TempSky from "./components/ActualTempSky";
-
+import Map from "./transport/Map";
+import { TrafficContextProvider } from "./transport/TrafficContext";
 
 function App() {
- 
-  return (<>
-  <DataContextProvider> 
-    <div className="container">
-      <div className="weather">
-        <div className="temps">
-        <TempSky />
-        <TempDay />
-        </div>
-        
-        <div className="meteorology">
-          <MaxTempMinTemp/>
-          
-          <MeteoCards /> 
-          
-        </div>
-        
+  return (
+    <>
+      <div className="container">
+        <DataContextProvider>
+          <div className="weather">
+            <div className="temps">
+              <TempSky />
+              <TempDay />
+            </div>
+            <div className="meteorology">
+              <MaxTempMinTemp />
+              <MeteoCards />
+            </div>
+          </div>
+        </DataContextProvider>
+        <TrafficContextProvider>
+          <div className="traffic">
+            <Map />
+          </div>
+        </TrafficContextProvider>
       </div>
-      {/* <div className="traffic">
-        <TempDay />
-        <div className="meteorology">
-          <TempMaxMin />
-          <MeteoCards />
-        </div>
-      </div> */}
-    </div>
-    </DataContextProvider>
-    
-    </>);
+    </>
+  );
 }
 
 export default App;
