@@ -124,7 +124,7 @@ const TempSky = () => {
       <CardActualTemp
         actualTemp={actualTemp}
         weatherCode={weatherCodeInfo[weatherCode].icon}
-        weatherCode2={"PARANÁ, ER " + weatherCodeInfo[weatherCode2].name}
+        weatherCode2={ weatherCodeInfo[weatherCode2].name +" "+ "PARANÁ, ER " }
       />
     </>
   );

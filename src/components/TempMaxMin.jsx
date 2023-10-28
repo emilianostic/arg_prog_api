@@ -35,11 +35,11 @@ const tempMaxMin = ({minTemperature_2m, maxTemperature_2m, dateFormat}) => {
       <h3>{dateFormat}</h3>
      
       <DivMaxMin>
-        <p>{minTemperature_2m}°C</p>
+        <p>{maxTemperature_2m}°C</p>
         <p>High</p>
       </DivMaxMin>
       <DivMaxMin>
-        <p>{maxTemperature_2m}°C</p>
+        <p>{minTemperature_2m}°C</p>
         <p>Low</p>
       </DivMaxMin>
     </DivTempMaxMin>

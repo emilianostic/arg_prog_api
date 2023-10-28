@@ -1,12 +1,19 @@
 import { createContext, useState, useEffect, useContext } from "react";
 import FetchDataTraffic from "./FetchDataTraffic";
+import styled from "styled-components"
 
 const TrafficContext = createContext();
+const DivLoading = styled.div`
+ margin-left: 50%;
+  
+ 
+`;
+
 
 export function TrafficContextProvider({ children }) {
   const [dataTraffic, setDataTraffic] = useState(null);
   const [loading, setLoading] = useState(true);
-
+const[selection, setSelection] = useState(null)
   useEffect(() => {
     setLoading(true);
     const fetchTrafficApi = async () => {
@@ -14,6 +21,7 @@ export function TrafficContextProvider({ children }) {
         const data = await FetchDataTraffic();
         setLoading(false);
         setDataTraffic(data);
+        setSelection(data)
         setTimeout(() => {
           fetchTrafficApi();
         }, 31000);
@@ -26,7 +34,7 @@ export function TrafficContextProvider({ children }) {
   }, []);
 
   if (loading) {
-    return <div>Cargando...</div>;
+    return <DivLoading>Cargando...</DivLoading>;
   }
 
   return (
@@ -34,6 +42,7 @@ export function TrafficContextProvider({ children }) {
       value={{
         dataTraffic,
         loading,
+        selection,
       }}
     >
       {children}

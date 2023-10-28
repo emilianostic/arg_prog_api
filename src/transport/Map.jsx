@@ -1,23 +1,42 @@
 import { MapContainer, TileLayer, Popup, Marker } from "react-leaflet";
-//import dataTraffic from './DataTraffic'
+
 import { useTraffic } from "./TrafficContext";
 
-//import { useState} from 'react';
 
+let sumLatitudes = 0;
+    let sumLongitudes = 0;
 const Map = () => {
-  const { dataTraffic } = useTraffic();
+  const { dataTraffic, selection  } = useTraffic();
   console.log(dataTraffic);
+ console.log(selection)
+  dataTraffic.forEach(dato => {
+    sumLatitudes += dato.latitude
+    sumLongitudes += dato.longitude
 
-  /* if(dataTraffic){
-  lat = dataTraffic[0].latitude
-  long = dataTraffic[0].longitude
-} */
+  });
+  const latAverage = sumLatitudes/dataTraffic.length
+const longAverage = sumLongitudes/dataTraffic.length
+console.log(latAverage)
+console.log(longAverage)
+
+
+const handlerOnChange = (dataTraffic) =>{
+//setSelection(dataTraffic)
+console.log(dataTraffic) 
+}
+
+
 
   return (
     <>
+   <select onChange={(e)=> handlerOnChange(e.target.value)}>{dataTraffic.map((item, index) =>
+    <option key={index}>{item.trip_headsign}</option>
+    )}
+
+    </select>
       <MapContainer
-        center={[-34.64657, -58.59802]}
-        zoom={12}
+        center={[-34.78661, -58.2494]}
+        zoom={11}
         scrollWheelZoom={true}
       >
         <TileLayer
@@ -28,15 +47,17 @@ const Map = () => {
           return (
             <>
               <Marker position={[data.latitude, data.longitude]} key={index}>
-                <Popup>
+                <Popup >
+                <span role="img" aria-label="emoji"> 🚌 </span> <br/>
                   Line {data.agency_id} <br />
                   Velocity {Math.round(data.speed)}
                   <br />
                   Destiny {data.trip_headsign}
                   <br />
-                  ID {data.id}
+                  ID {data.id}<br/>
+                  Agency {data.agency_name}
                 </Popup>
-              </Marker>{" "}
+              </Marker>
             </>
           );
         })}
