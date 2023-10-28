@@ -3,37 +3,27 @@ import { MapContainer, TileLayer, Popup, Marker } from "react-leaflet";
 import { useTraffic } from "./TrafficContext";
 
 
-let sumLatitudes = 0;
-    let sumLongitudes = 0;
+
 const Map = () => {
-  const { dataTraffic, selection  } = useTraffic();
+  const { dataTraffic, /* selection */  } = useTraffic();
   console.log(dataTraffic);
- console.log(selection)
-  dataTraffic.forEach(dato => {
-    sumLatitudes += dato.latitude
-    sumLongitudes += dato.longitude
+ /* console.log(selection) */
+  
 
-  });
-  const latAverage = sumLatitudes/dataTraffic.length
-const longAverage = sumLongitudes/dataTraffic.length
-console.log(latAverage)
-console.log(longAverage)
-
-
-const handlerOnChange = (dataTraffic) =>{
+/* const handlerOnChange = (dataTraffic) =>{
 //setSelection(dataTraffic)
 console.log(dataTraffic) 
-}
+} */
 
 
 
   return (
     <>
-   <select onChange={(e)=> handlerOnChange(e.target.value)}>{dataTraffic.map((item, index) =>
+   {/* <select onChange={(e)=> handlerOnChange(e.target.value)}>{dataTraffic.map((item, index) =>
     <option key={index}>{item.trip_headsign}</option>
     )}
 
-    </select>
+    </select> */}
       <MapContainer
         center={[-34.78661, -58.2494]}
         zoom={11}
