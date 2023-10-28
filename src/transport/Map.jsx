@@ -10,20 +10,20 @@ const Map = () => {
  /* console.log(selection) */
   
 
-/* const handlerOnChange = (dataTraffic) =>{
+const handlerOnChange = (dataTraffic) =>{
 //setSelection(dataTraffic)
 console.log(dataTraffic) 
-} */
+} 
 
 
 
   return (
     <>
-   {/* <select onChange={(e)=> handlerOnChange(e.target.value)}>{dataTraffic.map((item, index) =>
+   <select onChange={(e)=> handlerOnChange(e.target.value)}>{dataTraffic.map((item, index) =>
     <option key={index}>{item.trip_headsign}</option>
     )}
 
-    </select> */}
+    </select> 
       <MapContainer
         center={[-34.78661, -58.2494]}
         zoom={11}
