@@ -5,7 +5,7 @@ import TempDay from "./components/TempDay";
 import MeteoCards from "./components/MeteoCards";
 //import TempMaxMin from "./components/TempMaxMin";
 //import CardActualTemp from "./components/ActualTemp";
-import { DataContextProvider } from "./context/DataContext";
+import { WeatherDataContextProvider } from "./context/WeatherDataContext";
 import MaxTempMinTemp from "./components/MaxTempMinTemp";
 import TempSky from "./components/ActualTempSky";
 import Map from "./transport/Map";
@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <div className="container">
-        <DataContextProvider>
+        <WeatherDataContextProvider>
           <div className="weather">
             <div className="temps">
               <TempSky />
@@ -26,7 +26,7 @@ function App() {
               <MeteoCards />
             </div>
           </div>
-        </DataContextProvider>
+        </WeatherDataContextProvider>
         <TrafficContextProvider>
           <div className="traffic">
             <Map />

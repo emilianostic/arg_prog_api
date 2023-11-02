@@ -1,9 +1,9 @@
 import { createContext, useState, useEffect, useContext } from "react";
 import FetchData from "../components/FetchData";
 
-const DataContext = createContext();
+const WeatherDataContext = createContext();
 
-export function DataContextProvider({ children }) {
+export function WeatherDataContextProvider({ children }) {
   const [uvIndexMax, setUvIndexMax] = useState(null);
   const [loading, setLoading] = useState(true);
   const [sunrise, setSunrise] = useState(null);
@@ -58,7 +58,7 @@ export function DataContextProvider({ children }) {
   }
 
   return (
-    <DataContext.Provider
+    <WeatherDataContext.Provider
       value={{
         uvIndexMax,
         sunrise,
@@ -79,12 +79,12 @@ export function DataContextProvider({ children }) {
       }}
     >
       {children}
-    </DataContext.Provider>
+    </WeatherDataContext.Provider>
   );
 }
 
 export const useWeather = () => {
-  const context = useContext(DataContext);
+  const context = useContext(WeatherDataContext);
   if (!context) {
     throw new Error("useWeather debe usarse con  WeatherProvider");
   }

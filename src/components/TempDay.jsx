@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import TemperatureChart from "./Graphic";
 //import data from "./data"
-import { useWeather } from "../context/DataContext";	
+import { useWeather } from "../context/WeatherDataContext";	
 
 const DivTempDay = styled.div`
 margin: 0% 3.8% 2% 0%;

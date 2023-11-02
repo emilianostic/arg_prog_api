@@ -1,5 +1,5 @@
 import TempMaxMin from "./TempMaxMin";
-import { useWeather } from "../context/DataContext";
+import { useWeather } from "../context/WeatherDataContext";
 
 let maxTemperature = "";
 let minTemperature = ""

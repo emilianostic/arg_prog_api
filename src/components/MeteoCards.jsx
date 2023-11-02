@@ -5,7 +5,7 @@ import CardSunriseSunset from "./cards/CardSunriseSunset";
 import CardHumidity from "./cards/CardHumidity";
 import CardVisibility from "./cards/CardVisibility";
 import CardRainProbability from "./cards/CardRainProbability";
-import { useWeather } from "../context/DataContext";
+import { useWeather } from "../context/WeatherDataContext";
 
 const DivContainer = styled.div`
   width: 90%;
