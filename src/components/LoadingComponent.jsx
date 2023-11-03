@@ -1,5 +1,5 @@
 
-import { useWeather } from "../context/DataContext";
+import { useWeather } from "../context/WeatherDataContext";
 
 const LoadingCard = () =>{
     const { loading } = useWeather();

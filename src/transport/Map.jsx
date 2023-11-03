@@ -5,13 +5,13 @@ import { useTraffic } from "./TrafficContext";
 
 
 const Map = () => {
-  const { dataTraffic, /* selection */  } = useTraffic();
+  const { dataTraffic, selectedDestiny } = useTraffic();
   console.log(dataTraffic);
- /* console.log(selection) */
+ console.log(selectedDestiny) 
   
 
-const handlerOnChange = (dataTraffic) =>{
-//setSelection(dataTraffic)
+const handlerOnChange = (selectedDestiny) =>{
+/*setSelection(selection)   */
 console.log(dataTraffic) 
 } 
 

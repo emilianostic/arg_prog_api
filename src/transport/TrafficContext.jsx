@@ -13,7 +13,7 @@ const DivLoading = styled.div`
 export function TrafficContextProvider({ children }) {
   const [dataTraffic, setDataTraffic] = useState(null);
   const [loading, setLoading] = useState(true);
-const[selection, setSelection] = useState(null)
+const[selectedDestiny, setSelectedDestiny] = useState(null)
   useEffect(() => {
     setLoading(true);
     const fetchTrafficApi = async () => {
@@ -21,7 +21,7 @@ const[selection, setSelection] = useState(null)
         const data = await FetchDataTraffic();
         setLoading(false);
         setDataTraffic(data);
-        setSelection(data)
+        setSelectedDestiny(data.agency_id)
         setTimeout(() => {
           fetchTrafficApi();
         }, 31000);
@@ -33,6 +33,24 @@ const[selection, setSelection] = useState(null)
     fetchTrafficApi();
   }, []);
 
+  useEffect(() => {
+
+    const fetchTrafficApi = async () => {
+      try {
+        const data = await FetchDataTraffic();
+       
+        setSelectedDestiny(data)
+        
+      } catch (error) {
+        console.log("Error:", error);
+      }
+    };
+
+    fetchTrafficApi();
+  }, [selectedDestiny]);
+
+  
+
   if (loading) {
     return <DivLoading>Cargando...</DivLoading>;
   }
@@ -42,7 +60,7 @@ const[selection, setSelection] = useState(null)
       value={{
         dataTraffic,
         loading,
-        selection,
+        selectedDestiny,
       }}
     >
       {children}
