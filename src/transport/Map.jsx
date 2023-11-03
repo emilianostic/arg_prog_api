@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, Popup, Marker } from "react-leaflet";
 import { useTraffic } from "./TrafficContext";
 
 
-
+let filteredPositions = "";
 const Map = () => {
   const { dataTraffic, selectedDestiny } = useTraffic();
   console.log(dataTraffic);
@@ -11,8 +11,13 @@ const Map = () => {
   
 
 const handlerOnChange = (selectedDestiny) =>{
-/*setSelection(selection)   */
-console.log(dataTraffic) 
+// Filtrar las posiciones según el destino seleccionado
+/* filteredPositions = dataTraffic.filter((data) => data.trip_headsign === selectedDestiny);
+
+// Puedes hacer lo que necesites con las posiciones filtradas.
+console.log(filteredPositions);
+// Por ejemplo, puedes almacenarlas en el estado local si las necesitas en el componente. */
+
 } 
 
 
@@ -33,7 +38,7 @@ console.log(dataTraffic)
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {dataTraffic.map((data, index) => {
+        {dataTraffic.map((data, index) =>  {
           return (
             <>
               <Marker position={[data.latitude, data.longitude]} key={index}>

@@ -13,7 +13,8 @@ const DivLoading = styled.div`
 export function TrafficContextProvider({ children }) {
   const [dataTraffic, setDataTraffic] = useState(null);
   const [loading, setLoading] = useState(true);
-const[selectedDestiny, setSelectedDestiny] = useState(null)
+const[selectedDestiny, setSelectedDestiny] = useState("a Constitución")
+
   useEffect(() => {
     setLoading(true);
     const fetchTrafficApi = async () => {
@@ -21,7 +22,6 @@ const[selectedDestiny, setSelectedDestiny] = useState(null)
         const data = await FetchDataTraffic();
         setLoading(false);
         setDataTraffic(data);
-        setSelectedDestiny(data.agency_id)
         setTimeout(() => {
           fetchTrafficApi();
         }, 31000);
@@ -35,19 +35,20 @@ const[selectedDestiny, setSelectedDestiny] = useState(null)
 
   useEffect(() => {
 
-    const fetchTrafficApi = async () => {
+    const fetchDestinyApi = async () => {
       try {
         const data = await FetchDataTraffic();
+        console.log(data.trip_headsign )
        
-        setSelectedDestiny(data)
+       setSelectedDestiny(data.trip_headsign)
         
       } catch (error) {
         console.log("Error:", error);
       }
     };
 
-    fetchTrafficApi();
-  }, [selectedDestiny]);
+    fetchDestinyApi();
+  }, []);
 
   
 
