@@ -7,7 +7,7 @@ const DivTempMaxMin = styled.div`
   padding: 20px;
   background-size: cover;
   margin: 1%;
-  background-color: beige;
+ 
   width: 33%;
   display: flex;
   flex-direction: column;

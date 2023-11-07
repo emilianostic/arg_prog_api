@@ -2,12 +2,14 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  
 }
 
 body {
   background: beige;
   font-family: "Roboto", sans-serif;
   min-height: 100vh;
+  
   /* Flexbox */
   /*display: flex;*/
   /*gap: 20px; */
@@ -20,11 +22,18 @@ body {
 
 .container {
   display: flex;
+  
 }
 .weather {
   min-height: 100vh;
   width: 50%;
   box-sizing: border-box;
+  
+}
+.backgroundWeather{
+ display: flex; 
+ align-items: center;
+  background: url("./components/img/sunny.jpg");
 }
 
 /* .high{
@@ -33,7 +42,9 @@ margin-left: 29%;
 } */
 .meteorology {
   display: flex;
-  background-color: beige;
+  
+  
+  
 }
 .traffic {
   min-height: 100vh;

@@ -3,7 +3,7 @@ import styled from "styled-components"
 //import data from "./data"
 
 export const DivCardActualTemp = styled.div`
-	background-color: beige;
+
 	font-weight: bold;
 	position: relative;
     text-align: center;

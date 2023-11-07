@@ -92,7 +92,7 @@ const weatherCodeInfo = {
   },
   82: {
     name: "Rain violent",
-    icon: "🌨️",
+    icon: "🌨️🌨️🌨️",
   },
   85: {
     name: "Snow showers slight",
