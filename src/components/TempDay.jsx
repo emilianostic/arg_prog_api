@@ -4,10 +4,10 @@ import TemperatureChart from "./Graphic";
 import { useWeather } from "../context/WeatherDataContext";	
 
 const DivTempDay = styled.div`
-margin: 0% 3.8% 2% 0%;
+margin: 1% 3.5% 2% 0%; 
 	border-radius: 10px;
 	background-color: rgb(226, 226, 213);
-	width: 80%;
+	width: 94%;
 	font-weight: bold;
 	
 	position: relative;

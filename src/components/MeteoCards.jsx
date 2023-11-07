@@ -9,16 +9,16 @@ import { useWeather } from "../context/WeatherDataContext";
 
 const DivContainer = styled.div`
   width: 90%;
-  max-width: 1200px;
+  max-width: 90%;
   margin: auto;
   display: grid;
-  gap: 20px;
+  
 `;
 const DivContainerCards = styled.div`
   display: grid;
   margin-right: 5%;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 3%;
 `;
 
 const MeteoCards = () => {

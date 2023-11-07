@@ -26,13 +26,14 @@ body {
 }
 .weather {
   min-height: 100vh;
-  width: 50%;
+  width: 100%;
   box-sizing: border-box;
   
 }
 .backgroundWeather{
  display: flex; 
  align-items: center;
+
   background: url("./components/img/sunny.jpg");
 }
 
