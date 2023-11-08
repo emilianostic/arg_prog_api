@@ -6,6 +6,7 @@ import MaxTempMinTemp from "./components/MaxTempMinTemp";
 import TempSky from "./components/ActualTempSky";
 /* import Map from "./transport/Map";
 import { TrafficContextProvider } from "./transport/TrafficContext"; */
+import BackWeather from "./components/BackWeather";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <div className="container">
         <div className="backgroundWeather">
           <WeatherDataContextProvider>
+            <BackWeather>
             <div className="weather">
               <div className="temps">
                 <TempSky />
@@ -23,6 +25,7 @@ function App() {
                 <MeteoCards />
               </div>
             </div>
+            </BackWeather>
           </WeatherDataContextProvider>
         </div>
 
