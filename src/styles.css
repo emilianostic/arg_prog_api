@@ -2,14 +2,13 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  
 }
 
 body {
   background: beige;
   font-family: "Roboto", sans-serif;
   min-height: 100vh;
-  
+  /* background-color: rgb(117, 23, 105); */
   /* Flexbox */
   /*display: flex;*/
   /*gap: 20px; */
@@ -22,20 +21,18 @@ body {
 
 .container {
   display: flex;
-  
 }
 .weather {
   min-height: 100vh;
   width: 100%;
   box-sizing: border-box;
-  
 }
-.backgroundWeather{
- display: flex; 
- align-items: center;
+.backgroundWeather {
+  display: flex;
+  align-items: center;
 
-  background: url("./components/img/sunny.jpg");
-}
+  /* background: url("./components/img/sunny.jpg"); */
+}  
 
 /* .high{
 margin-bottom: 1%;
@@ -43,9 +40,6 @@ margin-left: 29%;
 } */
 .meteorology {
   display: flex;
-  
-  
-  
 }
 .traffic {
   min-height: 100vh;
