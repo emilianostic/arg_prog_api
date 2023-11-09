@@ -12,10 +12,11 @@ function App() {
   return (
     <>
       <div className="container">
-        <div className="backgroundWeather">
-          <WeatherDataContextProvider>
-            <BackWeather>
-            <div className="weather">
+        {/* <div className="backgroundweather"> */}
+          <BackWeather>
+            <WeatherDataContextProvider>
+              {/* <div className="weather"> */}
+              {/* <BackWeather> */}
               <div className="temps">
                 <TempSky />
                 <TempDay />
@@ -24,11 +25,11 @@ function App() {
                 <MaxTempMinTemp />
                 <MeteoCards />
               </div>
-            </div>
-            </BackWeather>
-          </WeatherDataContextProvider>
-        </div>
-
+              {/*  </BackWeather> */}
+              {/* </div> */}
+            </WeatherDataContextProvider>
+          </BackWeather>
+        {/* </div> */}
         {/* <TrafficContextProvider>
           <div className="traffic">
             <Map />

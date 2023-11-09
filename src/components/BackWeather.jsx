@@ -1,13 +1,16 @@
 import styled from "styled-components";
-import { useWeather } from "../context/WeatherDataContext";
+//import { useWeather } from "../context/WeatherDataContext";
+
 
 const DivBackWeather = styled.div`
-  display: flex;
-  align-items: center;
-  /* background: url("./components/img/sunny.jpg"); */
+min-height: 100vh;
+width: 100%;
+box-sizing: border-box;
+background-image: url("./img/clear sky.jpg");   
+ 
 `;
 
-const weatherCodeInfo = {
+/* const weatherCodeInfo = {
     0: {
       name: "Clear sky",
       icon: " ☀️",
@@ -121,13 +124,11 @@ const weatherCodeInfo = {
       icon: "⚡⚡⚡",
     },
   };
+ */
 
-
-
-
-  const BackWeather = () => {
-    const { weatherCode } = useWeather();
-  
+const BackWeather = () => {
+  /* const { weatherCode } = useWeather(); */
+  /* 
     let backgroundImage;
   
     // Verifica si el weatherCode existe en el objeto weatherCodeInfo
@@ -137,9 +138,12 @@ const weatherCodeInfo = {
       backgroundImage = `./components/img/${weatherType}.jpg`;
     } else {
       backgroundImage = "./components/img/default.jpg"; // Si no se encuentra un código válido, muestra una imagen por defecto
-    }
-  
-    return <DivBackWeather style={{ backgroundImage: `url(${backgroundImage})` }} />;
-  };
-  
-  export default BackWeather;
+    } */
+
+  return (
+    <DivBackWeather /* style={{ backgroundImage: `url(${backgroundImage})` }} */
+    />
+  );
+};
+
+export default BackWeather;

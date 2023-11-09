@@ -22,17 +22,18 @@ body {
 .container {
   display: flex;
 }
-.weather {
+/* .weather {
   min-height: 100vh;
   width: 100%;
   box-sizing: border-box;
-}
+  background: url("./components/img/sunny.jpg");  
+}  */
 .backgroundWeather {
   display: flex;
   align-items: center;
 
-  /* background: url("./components/img/sunny.jpg"); */
-}  
+    
+}   
 
 /* .high{
 margin-bottom: 1%;
