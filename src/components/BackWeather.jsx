@@ -1,5 +1,5 @@
 
-//import { useWeather } from "../context/WeatherDataContext";
+import { useWeather } from "../context/WeatherDataContext";
 import "../styles.css"
 import TempDay from "../components/TempDay";
 import MeteoCards from "../components/MeteoCards";
@@ -7,127 +7,32 @@ import MaxTempMinTemp from "../components/MaxTempMinTemp";
 import TempSky from "../components/ActualTempSky";
 
 
-/*  const weatherCodeInfo = {
-    0: {
-      name: "Clear sky",
-      icon: " ☀️",
-    },
-    1: {
-      name: "Mainly clear",
-      icon: " ☀️",
-    },
-    2: {
-      name: "Partly cloudy",
-      icon: "🌤️",
-    },
-    3: {
-      name: "Overcast",
-      icon: "☁️",
-    },
-    45: {
-      name: "Fog",
-      icon: "🌁",
-    },
-    48: {
-      name: "Depositing rime fog",
-      icon: "🌫️",
-    },
-    51: {
-      name: "Drizzle Light",
-      icon: "🫧",
-    },
-    53: {
-      name: "Drizzle moderate",
-      icon: "🫧 🫧",
-    },
-    55: {
-      name: "Drizzle dense",
-      icon: "🫧 🫧 🫧",
-    },
-    56: {
-      name: "Freezing Drizzle light",
-      icon: "❄️ 🫧",
-    },
-    57: {
-      name: "Freezing Drizzle dense",
-      icon: "🫧 ❄️ 🫧 ❄️",
-    },
-    61: {
-      name: "Rain: Slight",
-      icon: "🌦️",
-    },
-    63: {
-      name: "Rain moderate",
-      icon: "🌨️",
-    },
-    65: {
-      name: "Rain heavy",
-      icon: "⛈️",
-    },
-    66: {
-      name: "Freezing Rain light",
-      icon: "❄️🌨️",
-    },
-    67: {
-      name: "Freezing Rain heavy",
-      icon: "❄️🌨️❄️🌨️",
-    },
-    71: {
-      name: "Snow fall slight",
-      icon: "❄️",
-    },
-    73: {
-      name: "Snow fall moderate",
-      icon: "❄️❄️",
-    },
-    75: {
-      name: "Snow fall heavy",
-      icon: "❄️❄️❄️",
-    },
-    77: {
-      name: "Snow grains",
-      icon: "❄️❄️❄️❄️",
-    },
-    80: {
-      name: "Rain Slight",
-      icon: "🌨️",
-    },
-    81: {
-      name: "Rain moderate",
-      icon: "🌨️",
-    },
-    82: {
-      name: "Rain violent",
-      icon: "🌨️🌨️🌨️",
-    },
-    85: {
-      name: "Snow showers slight",
-      icon: "❄️",
-    },
-    86: {
-      name: "Snow showers heavy",
-      icon: "❄️❄️❄️",
-    },
-    95: {
-      name: "Thunderstorm Slight or moderate",
-      icon: "⚡",
-    },
-    96: {
-      name: "Thunderstorm with slight hail",
-      icon: "⚡",
-    },
-    99: {
-      name: "Thunderstorm with heavy hail",
-      icon: "⚡⚡⚡",
-    },
-  }; */
- 
 
 const BackWeather = () => {
- 
+  const {weatherCode} = useWeather();
+ let weatherClass;
+ if(weatherCode === 0 || weatherCode === 1 || weatherCode === 1){
+  weatherClass = "clear"
+ }
+ else if (weatherCode === 3){
+  weatherClass = "overcast"
+ }
+ else if (weatherCode === 45 || weatherCode === 48){
+  weatherClass = "fog"
+
+ }
+ else if( weatherCode === 51 || weatherCode === 53 || weatherClass === 55 || weatherCode === 56 || weatherCode === 57 || weatherCode === 61 || weatherCode === 63 || weatherCode === 65|| weatherCode === 66|| weatherCode === 67|| weatherCode === 80|| weatherCode === 81|| weatherCode === 82){
+  weatherClass = "rain"
+ }
+ else if (weatherCode === 85 || weatherCode === 86){
+  weatherClass = "snow"
+ }
+ else{
+  weatherClass = "storm"
+ }
 
   return (
-    <div className="clear">
+    <div className={weatherClass}>
     <div className="temps">
       <TempSky />
       <TempDay />

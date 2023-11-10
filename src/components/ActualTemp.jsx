@@ -7,10 +7,10 @@ export const DivCardActualTemp = styled.div`
 	font-weight: bold;
 	position: relative;
     text-align: center;
-    margin: 6.5% 
+    margin: 1.5% 
 `
 const PActualTemp = styled.p`
-font-size: 80px;
+font-size: 40px;
 `
 
 
