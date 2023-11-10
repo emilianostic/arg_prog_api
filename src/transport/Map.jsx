@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, Popup, Marker } from "react-leaflet";
 import { useTraffic } from "./TrafficContext";
 
 
-let filteredPositions = "";
+//let filteredPositions = "";
 const Map = () => {
   const { dataTraffic, selectedDestiny } = useTraffic();
   console.log(dataTraffic);

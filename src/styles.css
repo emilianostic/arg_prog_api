@@ -22,18 +22,14 @@ body {
 .container {
   display: flex;
 }
-/* .weather {
-  min-height: 100vh;
-  width: 100%;
+  .clear {
+ /*  min-height: 100vh;
+  width: 100%;  */
   box-sizing: border-box;
-  background: url("./components/img/sunny.jpg");  
-}  */
-.backgroundWeather {
-  display: flex;
-  align-items: center;
+  background-image: url("./components/img/clear sky.jpg");  
 
-    
-}   
+} 
+
 
 /* .high{
 margin-bottom: 1%;

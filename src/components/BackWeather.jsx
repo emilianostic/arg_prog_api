@@ -1,16 +1,13 @@
-import styled from "styled-components";
+
 //import { useWeather } from "../context/WeatherDataContext";
+import "../styles.css"
+import TempDay from "../components/TempDay";
+import MeteoCards from "../components/MeteoCards";
+import MaxTempMinTemp from "../components/MaxTempMinTemp";
+import TempSky from "../components/ActualTempSky";
 
 
-const DivBackWeather = styled.div`
-min-height: 100vh;
-width: 100%;
-box-sizing: border-box;
-background-image: url("./img/clear sky.jpg");   
- 
-`;
-
-/* const weatherCodeInfo = {
+/*  const weatherCodeInfo = {
     0: {
       name: "Clear sky",
       icon: " ☀️",
@@ -123,26 +120,23 @@ background-image: url("./img/clear sky.jpg");
       name: "Thunderstorm with heavy hail",
       icon: "⚡⚡⚡",
     },
-  };
- */
+  }; */
+ 
 
 const BackWeather = () => {
-  /* const { weatherCode } = useWeather(); */
-  /* 
-    let backgroundImage;
-  
-    // Verifica si el weatherCode existe en el objeto weatherCodeInfo
-    if (weatherCodeInfo[weatherCode]) {
-      const weatherType = weatherCodeInfo[weatherCode].name.toLowerCase();
-      console.log(weatherType)
-      backgroundImage = `./components/img/${weatherType}.jpg`;
-    } else {
-      backgroundImage = "./components/img/default.jpg"; // Si no se encuentra un código válido, muestra una imagen por defecto
-    } */
+ 
 
   return (
-    <DivBackWeather /* style={{ backgroundImage: `url(${backgroundImage})` }} */
-    />
+    <div className="clear">
+    <div className="temps">
+      <TempSky />
+      <TempDay />
+    </div>
+    <div className="meteorology">
+      <MaxTempMinTemp />
+      <MeteoCards />
+    </div>
+  </div>
   );
 };
 

@@ -9,7 +9,7 @@ const TemperatureChart = ({ dailyTemp, hourlyTime }) => {
         data: dailyTemp,
         fill: false,
         borderColor: "rgb(75, 192, 192)",
-        backgroundColor: "rgb(117, 23, 105)",
+        backgroundColor: "rgb(117, 70, 155)",
         responsive: true,
         width: 500,
         height: 400,
