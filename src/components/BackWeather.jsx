@@ -11,7 +11,7 @@ import TempSky from "../components/ActualTempSky";
 const BackWeather = () => {
   const {weatherCode} = useWeather();
  let weatherClass;
- if(weatherCode === 0 || weatherCode === 1 || weatherCode === 1){
+ if(weatherCode === 0 || weatherCode === 1 || weatherCode === 2){
   weatherClass = "clear"
  }
  else if (weatherCode === 3){
