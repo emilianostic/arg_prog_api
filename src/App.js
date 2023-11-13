@@ -5,8 +5,8 @@ import { WeatherDataContextProvider } from "./context/WeatherDataContext";
 //import MaxTempMinTemp from "./components/MaxTempMinTemp";
 //import TempSky from "./components/ActualTempSky";
 import BackWeather from "./components/BackWeather";
-/* import Map from "./transport/Map";
-import { TrafficContextProvider } from "./transport/TrafficContext"; */
+import Map from  "./transport/Map"
+import { TrafficContextProvider } from "./transport/TrafficContext";
 //import BackWeather from "./components/BackWeather";
 
 function App() {
@@ -17,11 +17,11 @@ function App() {
          <BackWeather/>
         </WeatherDataContextProvider>
 
-        {/* <TrafficContextProvider>
+        <TrafficContextProvider>
           <div className="traffic">
             <Map />
           </div>
-        </TrafficContextProvider> */}
+        </TrafficContextProvider> 
       </div>
     </>
   );

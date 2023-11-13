@@ -17,6 +17,7 @@ const DivContainer = styled.div`
 const DivContainerCards = styled.div`
   display: grid;
   margin-right: 5%;
+  margin-bottom: 2%;
   grid-template-columns: repeat(3, 1fr);
   gap: 3%;
 `;
