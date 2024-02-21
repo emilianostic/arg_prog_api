@@ -38,17 +38,18 @@ const[selectedDestiny, setSelectedDestiny] = useState("a Constitución")
     const fetchDestinyApi = async () => {
       try {
         const data = await FetchDataTraffic();
-        console.log(data.trip_headsign )
+       console.log(data)
        
-       setSelectedDestiny(data.trip_headsign)
-        
+       setSelectedDestiny(data)
+       console.log(selectedDestiny)
+       
       } catch (error) {
         console.log("Error:", error);
       }
     };
 
     fetchDestinyApi();
-  }, []);
+  }, [selectedDestiny]);
 
   
 
