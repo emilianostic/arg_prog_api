@@ -441,14 +441,18 @@ let colectivos = [
     "trip_headsign": "a Once"
   },
 ]
+
+
+
 for(let i = 0; i< colectivos.length; i++) {
-console.log(colectivos[i].agency_id);
+  let agencia = colectivos[i].agency_id
+console.log(agencia);
 } 
 console.log(colectivos.length)
 
 let filteredPositions = "";
 const Map = () => {
-  const { dataTraffic, selectedDestiny } = useTraffic();
+ const { dataTraffic, selectedDestiny } = useTraffic();
 
   //console.log(dataTraffic);
  // console.log(selectedDestiny);
@@ -471,7 +475,7 @@ const Map = () => {
         onChange={(e) => handlerOnChange(e.target.value)}
       >
         <>
-          <option>a Alessandri </option>
+          <option value="62">62 </option>
           <option>a Constitución </option>
           <option>a Constitución</option>
         </>
