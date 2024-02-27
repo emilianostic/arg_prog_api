@@ -13,7 +13,9 @@ const DivLoading = styled.div`
 export function TrafficContextProvider({ children }) {
   const [dataTraffic, setDataTraffic] = useState(null);
   const [loading, setLoading] = useState(true);
-const[selectedDestiny, setSelectedDestiny] = useState("a Constitución")
+  const [opcionSeleccionada, setOpcionSeleccionada] = useState('');
+  const [datosApi, setDatosApi] = useState([]);
+  const [datosOtraApi, setDatosOtraApi] = useState([]);
 
   useEffect(() => {
     setLoading(true);
@@ -33,23 +35,32 @@ const[selectedDestiny, setSelectedDestiny] = useState("a Constitución")
     fetchTrafficApi();
   }, []);
 
+  
+
   useEffect(() => {
 
-    const fetchDestinyApi = async () => {
-      try {
-        const data = await FetchDataTraffic();
-       console.log(data)
-       
-       setSelectedDestiny(data)
-       console.log(selectedDestiny)
-       
-      } catch (error) {
-        console.log("Error:", error);
+    if (opcionSeleccionada) {
+      if (setOpcionSeleccionada ('62')) {
+        // Llamada a la primera API
+        fetch('https://datosabiertos-transporte-apis.buenosaires.gob.ar:443/colectivos/vehiclePositionsSimple?agency_id=62&client_id=cb6b18c84b3b484d98018a791577af52&client_secret=3e3DB105Fbf642Bf88d5eeB8783EE1E6')
+          .then(response => response.json())
+          .then(data => setDatosApi(data))
+          .catch(error => console.error('Error al obtener datos de la API 1:', error));
+      } else if (setOpcionSeleccionada ('63')) {
+        // Llamada a la segunda API
+        fetch('https://datosabiertos-transporte-apis.buenosaires.gob.ar:443/colectivos/vehiclePositionsSimple?agency_id=63&client_id=cb6b18c84b3b484d98018a791577af52&client_secret=3e3DB105Fbf642Bf88d5eeB8783EE1E6')
+          .then(response => response.json())
+          .then(data => setDatosOtraApi(data))
+          .catch(error => console.error('Error al obtener datos de la API 2:', error));
       }
-    };
-
-    fetchDestinyApi();
-  }, [selectedDestiny]);
+      else{
+        fetch('https://datosabiertos-transporte-apis.buenosaires.gob.ar:443/colectivos/vehiclePositionsSimple?agency_id=64&client_id=cb6b18c84b3b484d98018a791577af52&client_secret=3e3DB105Fbf642Bf88d5eeB8783EE1E6')
+        .then(response => response.json())
+        .then(data => setDatosOtraApi(data))
+        .catch(error => console.error('Error al obtener datos de la API 3:', error));
+      }
+    }
+  }, [opcionSeleccionada]);
 
   
 
@@ -63,6 +74,9 @@ const[selectedDestiny, setSelectedDestiny] = useState("a Constitución")
         dataTraffic,
         loading,
         selectedDestiny,
+        datosApi,
+        datosOtraApi,
+        opcionSeleccionada
       }}
     >
       {children}
