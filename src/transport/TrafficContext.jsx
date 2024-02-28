@@ -16,6 +16,7 @@ export function TrafficContextProvider({ children }) {
   const [opcionSeleccionada, setOpcionSeleccionada] = useState('');
   const [datosApi, setDatosApi] = useState([]);
   const [datosOtraApi, setDatosOtraApi] = useState([]);
+  const [datosTerceraApi, setDatosTerceraApi] = useState([]);
 
   useEffect(() => {
     setLoading(true);
@@ -56,7 +57,7 @@ export function TrafficContextProvider({ children }) {
       else{
         fetch('https://datosabiertos-transporte-apis.buenosaires.gob.ar:443/colectivos/vehiclePositionsSimple?agency_id=64&client_id=cb6b18c84b3b484d98018a791577af52&client_secret=3e3DB105Fbf642Bf88d5eeB8783EE1E6')
         .then(response => response.json())
-        .then(data => setDatosOtraApi(data))
+        .then(data => setDatosTerceraApi(data))
         .catch(error => console.error('Error al obtener datos de la API 3:', error));
       }
     }
@@ -73,9 +74,9 @@ export function TrafficContextProvider({ children }) {
       value={{
         dataTraffic,
         loading,
-        selectedDestiny,
         datosApi,
         datosOtraApi,
+        datosTerceraApi,
         opcionSeleccionada
       }}
     >

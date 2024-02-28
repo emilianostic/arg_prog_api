@@ -6,11 +6,13 @@ import { useTraffic } from "./TrafficContext";
 
 let filteredPositions = "";
 const Map = () => {
- const { dataTraffic, selectedDestiny, opcionSeleccionada, datosApi, datosOtraApi  } = useTraffic();
+ const { opcionSeleccionada, /* dataTraffic, selectedDestiny,  datosApi, datosOtraApi, datosTerceraApi */  } = useTraffic();
 
   //console.log(dataTraffic);
  // console.log(selectedDestiny);
-
+ const handlerOnChange = (e) => {
+  opcionSeleccionada(e.target.value);
+};
 
 
   return (
@@ -43,7 +45,7 @@ const Map = () => {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {dataTraffic.map((data, index) => {
+        {opcionSeleccionada.map((data, index) => {
           return (
             <>
               <Marker position={[data.latitude, data.longitude]} key={index}>
