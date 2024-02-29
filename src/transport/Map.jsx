@@ -4,9 +4,9 @@ import { useTraffic } from "./TrafficContext";
 
 
 
-let filteredPositions = "";
+//let filteredPositions = "";
 const Map = () => {
- const { opcionSeleccionada, /* dataTraffic, selectedDestiny,  datosApi, datosOtraApi, datosTerceraApi */  } = useTraffic();
+ const { opcionSeleccionada, dataTraffic, /*selectedDestiny,  datosApi, datosOtraApi, datosTerceraApi */  } = useTraffic();
 
   //console.log(dataTraffic);
  // console.log(selectedDestiny);
@@ -45,7 +45,7 @@ const Map = () => {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {opcionSeleccionada.map((data, index) => {
+        {dataTraffic.map((data, index) => {
           return (
             <>
               <Marker position={[data.latitude, data.longitude]} key={index}>
