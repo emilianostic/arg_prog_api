@@ -14,14 +14,14 @@ const Map = () => {
   useEffect(() => {
 
     if (opcionSeleccionada) {
-      if (setOpcionSeleccionada ('62')) {
+      if (opcionSeleccionada === "62") {
        
         // Llamada a la primera API
         fetch('https://datosabiertos-transporte-apis.buenosaires.gob.ar:443/colectivos/vehiclePositionsSimple?agency_id=62&client_id=cb6b18c84b3b484d98018a791577af52&client_secret=3e3DB105Fbf642Bf88d5eeB8783EE1E6')
           .then(response => response.json())
           .then(data => setDatosApi(data))
           .catch(error => console.error('Error al obtener datos de la API 1:', error));
-      } else if (setOpcionSeleccionada ('63')) {
+      } else if (opcionSeleccionada === "63") {
         // Llamada a la segunda API
         fetch('https://datosabiertos-transporte-apis.buenosaires.gob.ar:443/colectivos/vehiclePositionsSimple?agency_id=63&client_id=cb6b18c84b3b484d98018a791577af52&client_secret=3e3DB105Fbf642Bf88d5eeB8783EE1E6')
           .then(response => response.json())
@@ -54,7 +54,7 @@ const Map = () => {
     <p>{datosTerceraApi}</p>
       <select
         value={opcionSeleccionada}
-        onChange={(e) => handleChange(e.target.value)}
+        onChange={handleChange}
       >
         <>
           <option value="62">línea 62 </option>
@@ -80,7 +80,7 @@ const Map = () => {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {opcionSeleccionada.map((data, index) => {
+        {opcionSeleccionada === "63" && (datosOtraApi.map((data, index) => {
           return (
             <>
               <Marker position={[data.latitude, data.longitude]} key={index}>
@@ -102,7 +102,7 @@ const Map = () => {
               </Marker>
             </>
           );
-        })}
+        }))}
       </MapContainer>
     </>
   );
