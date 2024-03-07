@@ -49,9 +49,7 @@ const Map = () => {
 
   return (
     <>
-    <p>{datosApi}</p>
-    <p>{datosOtraApi}</p>
-    <p>{datosTerceraApi}</p>
+    
       <select
         value={opcionSeleccionada}
         onChange={handleChange}
@@ -80,24 +78,24 @@ const Map = () => {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {opcionSeleccionada === "63" && (datosOtraApi.map((data, index) => {
+        {opcionSeleccionada === "63" && (datosOtraApi.map((dato, index) => {
           return (
             <>
-              <Marker position={[data.latitude, data.longitude]} key={index}>
+              <Marker position={[dato.latitude, dato.longitude]} key={index}>
                 <Popup>
                   <span role="img" aria-label="emoji">
                     {" "}
                     🚌{" "}
                   </span>{" "}
                   <br />
-                  Line {data.agency_id} <br />
-                  Velocity {Math.round(data.speed)}
+                  Line {dato.agency_id} <br />
+                  Velocity {Math.round(dato.speed)}
                   <br />
-                  Destiny {data.trip_headsign}
+                  Destiny {dato.trip_headsign}
                   <br />
-                  ID {data.id}
+                  ID {dato.id}
                   <br />
-                  Agency {data.agency_name}
+                  Agency {dato.agency_name}
                 </Popup>
               </Marker>
             </>
