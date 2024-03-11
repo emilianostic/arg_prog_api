@@ -99,7 +99,53 @@ const Map = () => {
                 </Popup>
               </Marker>
             </>
-          );
+        );
+        }))}
+        {opcionSeleccionada === "62" && (datosApi.map((dato, index) => {
+          return (
+            <>
+              <Marker position={[dato.latitude, dato.longitude]} key={index}>
+                <Popup>
+                  <span role="img" aria-label="emoji">
+                    {" "}
+                    🚌{" "}
+                  </span>{" "}
+                  <br />
+                  Line {dato.agency_id} <br />
+                  Velocity {Math.round(dato.speed)}
+                  <br />
+                  Destiny {dato.trip_headsign}
+                  <br />
+                  ID {dato.id}
+                  <br />
+                  Agency {dato.agency_name}
+                </Popup>
+              </Marker>
+            </>
+        );
+        }))}
+         {opcionSeleccionada === "64" && (datosTerceraApi.map((dato, index) => {
+          return (
+            <>
+              <Marker position={[dato.latitude, dato.longitude]} key={index}>
+                <Popup>
+                  <span role="img" aria-label="emoji">
+                    {" "}
+                    🚌{" "}
+                  </span>{" "}
+                  <br />
+                  Line {dato.agency_id} <br />
+                  Velocity {Math.round(dato.speed)}
+                  <br />
+                  Destiny {dato.trip_headsign}
+                  <br />
+                  ID {dato.id}
+                  <br />
+                  Agency {dato.agency_name}
+                </Popup>
+              </Marker>
+            </>
+        );
         }))}
       </MapContainer>
     </>
