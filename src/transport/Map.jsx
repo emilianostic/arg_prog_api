@@ -20,12 +20,12 @@ const Map = () => {
 
   useEffect(() => {
     if (opcionSeleccionada) {
-      if (opcionSeleccionada === "62") {
-        fetchData("62", setDatosApi);
-      } else if (opcionSeleccionada === "63") {
-        fetchData("63", setDatosOtraApi);
+      if (opcionSeleccionada === "25") {
+        fetchData("25", setDatosApi);
+      } else if (opcionSeleccionada === "71") {
+        fetchData("71", setDatosOtraApi);
       } else {
-        fetchData("64", setDatosTerceraApi);
+        fetchData("15", setDatosTerceraApi);
       }
     }
   }, [opcionSeleccionada]);
@@ -49,19 +49,19 @@ const Map = () => {
     <>
       <select value={opcionSeleccionada} onChange={(e) => setOpcionSeleccionada(e.target.value)}>
       <option value="">Elija una línea</option>
-        <option value="62">línea 62 </option>
-        <option value="63">línea 63</option>
-        <option value="64"> línea 64</option>
+        <option value="25">línea 25 </option>
+        <option value="71">línea 71</option>
+        <option value="15"> línea 15</option> 
       </select>
 
-      <MapContainer center={[-34.78661, -58.2494]} zoom={11} scrollWheelZoom={true}>
+      <MapContainer center={[-34.58661, -58.5494]} zoom={11} scrollWheelZoom={true}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {opcionSeleccionada === "62" && renderMarkers(datosApi)}
-        {opcionSeleccionada === "63" && renderMarkers(datosOtraApi)}
-        {opcionSeleccionada === "64" && renderMarkers(datosTerceraApi)}
+        {opcionSeleccionada === "25" && renderMarkers(datosApi)}
+        {opcionSeleccionada === "71" && renderMarkers(datosOtraApi)}
+        {opcionSeleccionada === "15" && renderMarkers(datosTerceraApi)}
       </MapContainer>
     </>
   );
