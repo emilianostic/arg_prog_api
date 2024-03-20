@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 
-const FetchData = (data) => { 
-  /* const [datosApi, setDatosApi] = useState([]);
+const FetchData = () => { 
+  const [datosApi, setDatosApi] = useState([]);
   const [datosOtraApi, setDatosOtraApi] = useState([]);
-  const [datosTerceraApi, setDatosTerceraApi] = useState([]);  */
+  const [datosTerceraApi, setDatosTerceraApi] = useState([]);
+  const [datosDuartaApi, setDatosCuartaApi] = useState([]);
   const [opcionSeleccionada, setOpcionSeleccionada] = useState('');
 
   const fetchDatas = (latitude, longitude, setData) => {
@@ -16,13 +17,13 @@ const FetchData = (data) => {
   useEffect(() => {
     if (opcionSeleccionada) {
       if (opcionSeleccionada === "Caballito") {
-        fetchDatas("-34.6226", "-58.441", data);
+        fetchDatas("-34.6226", "-58.441", setDatosApi);
       } else if (opcionSeleccionada === "Parque Patricios") {
-        fetchDatas("-34.6382", "-58.4014", data);
+        fetchDatas("-34.6382", "-58.4014", setDatosApi);
       } else if(opcionSeleccionada === "Paraná") {
-        fetchDatas("-31.7327", "-60.529", data);
+        fetchDatas("-31.7327", "-60.529", setDatosTerceraApi);
       }else {
-        fetchDatas("-38.9516", "-68.0591", data);
+        fetchDatas("-38.9516", "-68.0591", setDatosCuartaApi);
       }
     }
   }, [opcionSeleccionada]);
