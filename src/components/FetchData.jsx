@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 
-const FetchData = () => { 
+const FetchData = (data) => { 
   /* const [datosApi, setDatosApi] = useState([]);
   const [datosOtraApi, setDatosOtraApi] = useState([]);
-  const [datosTerceraApi, setDatosTerceraApi] = useState([]); */
+  const [datosTerceraApi, setDatosTerceraApi] = useState([]);  */
   const [opcionSeleccionada, setOpcionSeleccionada] = useState('');
 
   const fetchDatas = (latitude, longitude, setData) => {
