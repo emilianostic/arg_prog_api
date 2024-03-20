@@ -20,6 +20,8 @@ export function WeatherDataContextProvider({ children }) {
   const [actualTemp, setActualTemp] = useState(null);
   const [dailyTemp, setDailyTemp] = useState(null);
   const [hourlyTime, setHourlyTime] = useState(null);
+const [latitude, setLatitude] = useState(null);
+const [longiude, setLongitude] = useState(null);
 
   useEffect(() => {
     setLoading(true);
@@ -43,6 +45,8 @@ export function WeatherDataContextProvider({ children }) {
         setDateFormat(data.current_weather.time);
         setWeatherCode(data.current_weather.weathercode);
         setWeatherCode2(data.current_weather.weathercode);
+        setLatitude(data.latitude);
+        setLongitude(data.longitude);
 
         console.log(data.current_weather.weathercode);
       } catch (error) {
@@ -76,6 +80,8 @@ export function WeatherDataContextProvider({ children }) {
         weatherCode,
         weatherCode2,
         loading,
+        latitude,
+        longiude
       }}
     >
       {children}
