@@ -1,18 +1,21 @@
+import { useWeather } from "./WeatherDataContextProvider";
 
-import { useWeather } from "../context/WeatherDataContext";
+function WeatherComponent() {
+  const { city, handleCityChange } = useWeather();
 
+  return (
+    <div>
+      <select value={city} onChange={handleCityChange}>
+        <option value="Paraná">Ciudad 1</option>
+        <option value="Caballito">Ciudad 2</option>
+        <option value="Parque Patricios">Ciudad 3</option>
+        <option value="Neuquén">Ciudad 4</option>
+      </select>
+      <div>
+        {/* Aquí renderiza los datos de weatherData según la ciudad seleccionada */}
+      </div>
+    </div>
+  );
+}
 
-const CitySelect = () =>{
-  const { latitude, longitude} = useWeather();
-return (
-    <>
-<select>
-<option value="">Elija una ciudad o barrio</option>
-  <option value="25">Caballito </option>
-  <option value="71">Parque Patricios</option>
-  <option value="15"> Paraná</option>
-  <option value="15"> Neuquén</option> 
-</select>
-</>
-)}
-export default CitySelect
+export default WeatherComponent

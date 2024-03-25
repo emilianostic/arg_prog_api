@@ -1,9 +1,18 @@
 import { createContext, useState, useEffect, useContext } from "react";
 import FetchData from "../components/FetchData";
 
+
+const cityCoordinates = {
+  "Paraná": { latitude: "-31.7327", longitude: "-60.529" },//Parana
+  "Caballito": { latitude: "-34.6226", longitude: "-58.441" },//Caball
+  "Parque Patricios": { latitude: "-34.6382", longitude: "-58.4014" },//PP
+  "Neuquén": { latitude: "-38.9516", longitude: "-68.0591" }
+};
+
 const WeatherDataContext = createContext();
 
 export function WeatherDataContextProvider({ children }) {
+  const [city, setCity] = useState("Paraná");
   const [uvIndexMax, setUvIndexMax] = useState(null);
   const [loading, setLoading] = useState(true);
   const [sunrise, setSunrise] = useState(null);
@@ -16,18 +25,18 @@ export function WeatherDataContextProvider({ children }) {
   const [weatherCode2, setWeatherCode2] = useState(null);
   const [minTemperature_2m, setMinTemperature_2m] = useState(null);
   const [maxTemperature_2m, setMaxTemperature_2m] = useState(null);
-  const [dateFormat, setDateFormat] = useState(null);
+  const [dateFormat, setDateFormat] = useState(null); 
   const [actualTemp, setActualTemp] = useState(null);
   const [dailyTemp, setDailyTemp] = useState(null);
   const [hourlyTime, setHourlyTime] = useState(null);
-const [latitude, setLatitude] = useState(null);
-const [longiude, setLongitude] = useState(null);
+
 
   useEffect(() => {
     setLoading(true);
     const fetchDataApi = async () => {
       try {
-        const data = await FetchData();
+        const { latitude, longitude } = cityCoordinates[city];
+        const data = await FetchData(latitude, longitude);
         setLoading(false);
         setUvIndexMax(data.daily.uv_index_max);
         setSunrise(data.daily.sunrise);
@@ -45,8 +54,7 @@ const [longiude, setLongitude] = useState(null);
         setDateFormat(data.current_weather.time);
         setWeatherCode(data.current_weather.weathercode);
         setWeatherCode2(data.current_weather.weathercode);
-        setLatitude(data.latitude);
-        setLongitude(data.longitude);
+       
 
         console.log(data.current_weather.weathercode);
       } catch (error) {
@@ -80,8 +88,7 @@ const [longiude, setLongitude] = useState(null);
         weatherCode,
         weatherCode2,
         loading,
-        latitude,
-        longiude
+       
       }}
     >
       {children}

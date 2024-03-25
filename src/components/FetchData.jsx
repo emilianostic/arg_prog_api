@@ -1,6 +1,26 @@
-import { useState, useEffect } from "react";
+//import { useState, useEffect } from "react";
 
-const FetchData = () => { 
+
+
+const FetchData = (latitude, longitude) => {
+  const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,relativehumidity_2m,precipitation_probability,weathercode,visibility&daily=sunrise,sunset,uv_index_max,uv_index_clear_sky_max&current_weather=true&timezone=America%2FSao_Paulo&forecast_days=1`;
+
+  return fetch(url)
+    .then(res => res.json())
+    .then(data => {
+      return data;
+    })
+    .catch(ex => {
+      console.error(ex);
+    });
+};
+
+export default FetchData;
+
+
+
+
+  /*const FetchData = () => { 
   const [datosApi, setDatosApi] = useState([]);
   const [datosOtraApi, setDatosOtraApi] = useState([]);
   const [datosTerceraApi, setDatosTerceraApi] = useState([]);
@@ -14,12 +34,12 @@ const FetchData = () => {
       .then(data => setData(data))
       .catch(error => console.error(`Error al obtener datos de la API ${latitude, longitude}:`, error));
   };
-  useEffect(() => {
+ useEffect(() => {
     if (opcionSeleccionada) {
       if (opcionSeleccionada === "Caballito") {
         fetchDatas("-34.6226", "-58.441", setDatosApi);
       } else if (opcionSeleccionada === "Parque Patricios") {
-        fetchDatas("-34.6382", "-58.4014", setDatosApi);
+        fetchDatas("-34.6382", "-58.4014", setDatosOtraApi);
       } else if(opcionSeleccionada === "Paraná") {
         fetchDatas("-31.7327", "-60.529", setDatosTerceraApi);
       }else {
@@ -39,7 +59,7 @@ const FetchData = () => {
     </select>
     </>
   )
-}
+} 
 
 
- export default FetchData
+ export default FetchData */
