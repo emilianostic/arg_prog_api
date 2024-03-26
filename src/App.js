@@ -7,13 +7,16 @@ import { WeatherDataContextProvider } from "./context/WeatherDataContext";
 import BackWeather from "./components/BackWeather";
 import Map from  "./transport/Map"
 import { TrafficContextProvider } from "./transport/TrafficContext";
-
+import CitySelect from "./components/CitySelector";
 
 function App() {
   return (
     <>
+   
       <div className="container">
+
         <WeatherDataContextProvider>
+        <CitySelect/>
          <BackWeather/>
         </WeatherDataContextProvider>
 

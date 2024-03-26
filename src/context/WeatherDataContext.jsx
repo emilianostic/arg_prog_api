@@ -3,16 +3,20 @@ import FetchData from "../components/FetchData";
 
 
 const cityCoordinates = {
-  "Paraná": { latitude: "-31.7327", longitude: "-60.529" },//Parana
-  "Caballito": { latitude: "-34.6226", longitude: "-58.441" },//Caball
-  "Parque Patricios": { latitude: "-34.6382", longitude: "-58.4014" },//PP
-  "Neuquén": { latitude: "-38.9516", longitude: "-68.0591" }
+  parana: { latitude: "-31.7327", longitude: "-60.529"},//Parana
+  caballito: { latitude: "-34.6226", longitude: "-58.441"},//Caball
+  parquePatricios: { latitude: "-34.6382", longitude: "-58.4014" },//PP
+  neuquen: { latitude: "-38.9516", longitude: "-68.0591" },
+  sanbe: {latitude: "-31.7837", longitude: "-60.4416"},
+  gualeguay: {latitude: "-33.1416", longitude: "-59.3097"},
+  madrid: {latitude: "40.4165", longitude:"-3.7026"},
+  hasenkamp: {latitude: "-31.5123", longitude:"-59.8355"}
 };
 
 const WeatherDataContext = createContext();
 
 export function WeatherDataContextProvider({ children }) {
-  const [city, setCity] = useState("Paraná");
+  const [city, setCity] = useState("parana");
   const [uvIndexMax, setUvIndexMax] = useState(null);
   const [loading, setLoading] = useState(true);
   const [sunrise, setSunrise] = useState(null);
@@ -45,7 +49,6 @@ export function WeatherDataContextProvider({ children }) {
         setHumidity(data.hourly.relativehumidity_2m);
         setHourlyVisibility(data.hourly.visibility);
         setRainProbability(data.hourly.precipitation_probability);
-
         setMinTemperature_2m(data.hourly.temperature_2m);
         setMaxTemperature_2m(data.hourly.temperature_2m);
         setActualTemp(data.current_weather.temperature);
@@ -63,7 +66,11 @@ export function WeatherDataContextProvider({ children }) {
     };
 
     fetchDataApi();
-  }, []);
+  }, [city]);
+
+  const handleCityChange = (event) => {
+    setCity(event.target.value);
+  };
 
   if (loading) {
     return <div>Cargando...</div>;
@@ -88,6 +95,8 @@ export function WeatherDataContextProvider({ children }) {
         weatherCode,
         weatherCode2,
         loading,
+        city,
+        handleCityChange,
        
       }}
     >
