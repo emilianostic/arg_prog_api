@@ -1,5 +1,6 @@
 import { MapContainer, TileLayer, Popup, Marker } from "react-leaflet";
 import { useState, useEffect } from "react";
+import "../styles.css";
 
 const Map = () => {
   const [opcionSeleccionada, setOpcionSeleccionada] = useState('');
@@ -47,7 +48,7 @@ const Map = () => {
 
   return (
     <>
-      <select value={opcionSeleccionada} onChange={(e) => setOpcionSeleccionada(e.target.value)}>
+      <select className="selectLine" value={opcionSeleccionada} onChange={(e) => setOpcionSeleccionada(e.target.value)}>
       <option value="">Elija una línea</option>
         <option value="25">línea 25 </option>
         <option value="71">línea 71</option>

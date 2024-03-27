@@ -101,3 +101,20 @@ p {
   width: 100wh;
   height: 100vh;
 }
+.selector{
+  background: transparent;
+     border: none;
+     font-size: 100%;
+     height: 50%;
+     padding: 1%;
+     width: 250px;
+     margin-left: 10%;
+     color: rgb(24, 24, 12);
+     text-shadow: -2px -2px  3px white;
+} 
+
+.selectLine{
+  background: transparent;
+  border: none;
+  font-size: 100%;
+}

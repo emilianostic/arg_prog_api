@@ -4,7 +4,7 @@ import TempDay from "../components/TempDay";
 import MeteoCards from "../components/MeteoCards";
 import MaxTempMinTemp from "../components/MaxTempMinTemp";
 import TempSky from "../components/ActualTempSky";
-
+import CitySelect from "./CitySelector";
 
 const BackWeather = () => {
   const { weatherCode } = useWeather();
@@ -39,8 +39,9 @@ const BackWeather = () => {
 
   return (
     <div className={weatherClass}>
-      
+    
       <div className="temps">
+        <CitySelect/>
         <TempSky />
         <TempDay />
       </div>

@@ -1,12 +1,13 @@
 import { useWeather } from "../context/WeatherDataContext";
+import "../styles.css";
 
 
 function CitySelect() {
   const { city, handleCityChange } = useWeather();
 
   return (
-    <div>
-      <select value={city} onChange={handleCityChange}>
+    <>
+      <select className="selector" value={city} onChange={handleCityChange}>
         <option value="parana">Paraná</option>
         <option value="caballito">Caballito</option>
         <option value="parquePatricios">Parque Patricios</option>
@@ -16,10 +17,8 @@ function CitySelect() {
         <option value="madrid">Madrid</option>
         <option value="hasenkamp">Hasenkamp</option>
       </select>
-      <div>
-        {/* Aquí renderiza los datos de weatherData según la ciudad seleccionada */}
-      </div>
-    </div>
+      </>
+  
   );
 }
 
