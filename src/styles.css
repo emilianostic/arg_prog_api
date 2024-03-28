@@ -82,7 +82,11 @@ margin-left: 29%;
 }
 
 .temps {
-  display: flex;
+  width: 100%; /* El div ocupará el 100% del ancho del contenedor padre */
+    /*max-width: 500px;  Establece un ancho máximo */
+    height: auto; /* Permite que la altura se ajuste automáticamente según el contenido */
+
+ display: flex;
   align-items: center;
 }
 
@@ -104,11 +108,12 @@ p {
 .selector{
   background: transparent;
      border: none;
+     font-weight: bold;
      font-size: 100%;
      height: 50%;
      padding: 1%;
-     width: 250px;
-     margin-left: 10%;
+     width: 30%;
+     margin-left: 5%;
      color: rgb(24, 24, 12);
      text-shadow: -2px -2px  3px white;
 } 
@@ -117,4 +122,9 @@ p {
   background: transparent;
   border: none;
   font-size: 100%;
+}
+
+.temperature{
+  width: 100wh;
+  height: 100vh;
 }
