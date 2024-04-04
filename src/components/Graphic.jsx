@@ -11,12 +11,12 @@ const TemperatureChart = ({ dailyTemp, hourlyTime }) => {
         borderColor: "rgb(75, 192, 192)",
         backgroundColor: "rgb(117, 70, 155)",
         responsive: true,
-        width: 500,
-        height: 400,
+       
       },
     ],
   };
   const chartOptions = {
+    maintainAspectRatio: false,
     scales: {
       x: {
         type: "category",
