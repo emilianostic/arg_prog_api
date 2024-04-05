@@ -73,7 +73,8 @@ margin-left: 29%;
 } */
 .meteorology {
   display: flex;
- 
+  
+  width: 100%;
 }
 .traffic {
   min-height: 100vh;
