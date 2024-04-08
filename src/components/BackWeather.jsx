@@ -43,8 +43,9 @@ const BackWeather = () => {
       <div className="temps">
         <CitySelect/>
         <TempSky />
-        <TempDay />
+        
       </div>
+      <TempDay />
       <div className="meteorology">
         <MaxTempMinTemp />
         <MeteoCards />

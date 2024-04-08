@@ -3,7 +3,7 @@ import { DivCardUV, DivTextUV } from "./CardUV"
 //import data from "./data"
 
 export const IconStyled = styled.h2`
-font-size: 40px;
+font-size: 200%;
 text-align: center;
 `
 const DivCardWind = styled(DivCardUV)`

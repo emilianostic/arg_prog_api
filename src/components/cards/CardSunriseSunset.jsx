@@ -5,7 +5,7 @@ const DivCardSunriseSunset = styled(DivCardUV)``;
 const DivTextunriseSunset = styled(DivTextUV)``;
 
 const RiseSetStyled = styled.p`
-font-size: 30px;
+font-size: 150%;
 text-align: center;
 `
 

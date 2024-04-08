@@ -17,6 +17,7 @@ const TemperatureChart = ({ dailyTemp, hourlyTime }) => {
   };
   const chartOptions = {
     maintainAspectRatio: false,
+    
     scales: {
       x: {
         type: "category",

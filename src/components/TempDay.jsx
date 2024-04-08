@@ -5,16 +5,18 @@ import { useWeather } from "../context/WeatherDataContext";
 import "../styles.css";
 
 const DivTempDay = styled.div`
-margin: 1% 3.5% 2% 0%; 
-	border-radius: 10px;
+
+	border-radius: 5%;
 	background-color: rgb(226, 226, 213);
-	width: 100%;
+	width: 67%;
+	height: auto;
 	font-weight: bold;
-	
+	margin-right: 3.2%;
 	position: relative;
 	overflow: hidden;
 	background-size: cover;
 	background-position: center center;
+	margin-left: auto; /* Esto justificará el componente a la derecha */
 `
 
 let formattedHours= "";
