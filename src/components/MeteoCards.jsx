@@ -25,7 +25,7 @@ const DivContainerCards = styled.div`
 const MeteoCards = () => {
   const { uvIndexMax, sunrise, sunset, windStatus, humidity, hourlyVisibility, rainProbability } = useWeather();
   const sunRiseDate = new Date(sunrise);
-  const sunRiseHour = `${sunRiseDate.getHours()}:${sunRiseDate.getMinutes()}`;
+  const sunRiseHour = `${String(sunRiseDate.getHours()).padStart(2, '0')}:${String(sunRiseDate.getMinutes()).padStart(2, '0')}`;
 
   const sunSetDate = new Date(sunset);
   const sunSetHour = `${sunSetDate.getHours()}:${sunSetDate.getMinutes()}`;
@@ -55,7 +55,6 @@ if(rainProbability){
 addRainProbability  = rainProbability.reduce((acumulador, valor) => acumulador + valor, 0);
 rainProbabilityAverage = Math.round(addRainProbability/rainProbability.length)
 }
-
 
 
   return (
