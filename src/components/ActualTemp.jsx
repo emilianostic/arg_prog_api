@@ -1,36 +1,25 @@
-import styled from "styled-components"
-
-//import data from "./data"
+import styled from "styled-components";
 
 export const DivCardActualTemp = styled.div`
-
-	font-weight: bold;
-	position: relative;
-    text-align: center;
-    margin: 7.5%;
-    width: 60%;
-`
+  font-weight: bold;
+  position: relative;
+  text-align: center;
+  margin: 7.5%;
+  width: 60%;
+`;
 const PActualTemp = styled.p`
-font-size: 300%;
-`
+  font-size: 300%;
+`;
 
+const CardActualTemp = ({ actualTemp, weatherCode, weatherCode2 }) => {
+  console.log(weatherCode);
+  return (
+    <DivCardActualTemp>
+      <h3>{weatherCode2}</h3>
+      <PActualTemp>{weatherCode}</PActualTemp>
+      <p>{actualTemp} °C</p>
+    </DivCardActualTemp>
+  );
+};
 
-//const code_sky_status = 1;
-
-
-const CardActualTemp = ({actualTemp, weatherCode, weatherCode2}) => {
-   console.log(weatherCode)
-    return(
-        <DivCardActualTemp>
-          
-          <h3>{weatherCode2}</h3>
-          <PActualTemp >
-          
-          {weatherCode}
-          </PActualTemp>
-       <p>{actualTemp} °C</p>
-      </DivCardActualTemp>
-    );
-}
-
-export default CardActualTemp 
+export default CardActualTemp;

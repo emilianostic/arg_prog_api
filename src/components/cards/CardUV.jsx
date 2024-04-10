@@ -1,5 +1,4 @@
 import styled from "styled-components";
-//import data from "./data"
 
 
 export const DivCardUV = styled.div`
@@ -25,7 +24,7 @@ const UVStyled = styled.p`
   text-align: center;
 `;
 
-//const UVdata = data["daily"]["uv_index_clear_sky_max"];
+
 
 const UVsign = {
   uno: {
@@ -34,8 +33,7 @@ const UVsign = {
   },
 };
 
-const CardUV = ({uvIndexMax}) => {
-
+const CardUV = ({ uvIndexMax }) => {
   return (
     <DivCardUV>
       <DivTextUV>

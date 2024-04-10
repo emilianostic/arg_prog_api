@@ -18,7 +18,7 @@ const BackWeather = () => {
   } else if (
     weatherCode === 51 ||
     weatherCode === 53 ||
-    weatherClass === 55 ||
+    weatherCode === 55 ||
     weatherCode === 56 ||
     weatherCode === 57 ||
     weatherCode === 61 ||
@@ -39,11 +39,9 @@ const BackWeather = () => {
 
   return (
     <div className={weatherClass}>
-    
       <div className="temps">
-        <CitySelect/>
+        <CitySelect />
         <TempSky />
-        
       </div>
       <TempDay />
       <div className="meteorology">

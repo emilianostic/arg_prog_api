@@ -1,3 +1,115 @@
+import { MapContainer, TileLayer, Popup, Marker } from "react-leaflet";
+import { useState, useEffect } from "react";
+import "../styles.css";
+
+const Map = () => {
+  const [opcionSeleccionada, setOpcionSeleccionada] = useState("");
+  const [datosApi, setDatosApi] = useState({});
+
+  const fetchData = (agencyId, setData) => {
+    const apiUrl = `https://datosabiertos-transporte-apis.buenosaires.gob.ar:443/colectivos/vehiclePositionsSimple?agency_id=${agencyId}&client_id=cb6b18c84b3b484d98018a791577af52&client_secret=3e3DB105Fbf642Bf88d5eeB8783EE1E6`;
+    fetch(apiUrl)
+      .then((response) => response.json())
+      .then((data) =>
+        setData((prevData) => ({ ...prevData, [agencyId]: data }))
+      )
+      .catch((error) =>
+        console.error(`Error al obtener datos de la API ${agencyId}:`, error)
+      );
+  };
+
+  useEffect(() => {
+    if (opcionSeleccionada) {
+      const fetchDataForOption = {
+        25: setDatosApi,
+        71: setDatosApi,
+        5: setDatosApi,
+        55: setDatosApi,
+        2: setDatosApi,
+        103: setDatosApi,
+        8: setDatosApi,
+        92: setDatosApi,
+        172: setDatosApi,
+        84: setDatosApi,
+        146: setDatosApi,
+        105: setDatosApi,
+        26: setDatosApi,
+        132: setDatosApi,
+        165: setDatosApi,
+        141: setDatosApi,
+        36: setDatosApi,
+        143: setDatosApi,
+        15: setDatosApi,
+      };
+      fetchData(opcionSeleccionada, fetchDataForOption[opcionSeleccionada]);
+    }
+  }, [opcionSeleccionada]);
+
+  const renderMarkers = (data) =>
+    data.map((dato, index) => (
+      <Marker position={[dato.latitude, dato.longitude]} key={index}>
+        <Popup>
+          <span role="img" aria-label="emoji">
+            {" "}
+            🚌{" "}
+          </span>{" "}
+          <br />
+          Line {dato.agency_id} <br />
+          Velocity {Math.round(dato.speed)} <br />
+          Destiny {dato.trip_headsign} <br />
+          ID {dato.id} <br />
+          Agency {dato.agency_name}
+        </Popup>
+      </Marker>
+    ));
+
+  return (
+    <>
+      <select
+        className="selectLine"
+        value={opcionSeleccionada}
+        onChange={(e) => setOpcionSeleccionada(e.target.value)}
+      >
+        <option value="">Elija una línea</option>
+        <option value="2">línea 2 </option>
+        <option value="5">línea 5 </option>
+        <option value="8">línea 8</option>
+        <option value="15"> línea 15</option>
+        <option value="25"> línea 25</option>
+        <option value="26">línea 26 </option>
+        <option value="36">línea 36</option>
+        <option value="55"> línea 55</option>
+        <option value="92">línea 92 </option>
+        <option value="103">línea 103</option>
+        <option value="105"> línea 105</option>
+        <option value="132"> línea 132</option>
+        <option value="141">línea 141 </option>
+        <option value="143">línea 143</option>
+        <option value="146"> línea 146</option>
+        <option value="165"> línea 165</option>
+        <option value="172">línea 172 </option>
+      </select>
+
+      <MapContainer
+        center={[-34.68661, -58.4494]}
+        zoom={10}
+        scrollWheelZoom={true}
+      >
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        {opcionSeleccionada &&
+          renderMarkers(datosApi[opcionSeleccionada] || [])}
+      </MapContainer>
+    </>
+  );
+};
+
+export default Map;
+
+//código original sin acortar:
+
 /* import { MapContainer, TileLayer, Popup, Marker } from "react-leaflet";
 import { useState, useEffect } from "react";
 import "../styles.css";
@@ -158,113 +270,3 @@ const Map = () => {
 };
 
 export default Map; */
-
-import { MapContainer, TileLayer, Popup, Marker } from "react-leaflet";
-import { useState, useEffect } from "react";
-import "../styles.css";
-
-const Map = () => {
-  const [opcionSeleccionada, setOpcionSeleccionada] = useState("");
-  const [datosApi, setDatosApi] = useState({});
-
-  const fetchData = (agencyId, setData) => {
-    const apiUrl = `https://datosabiertos-transporte-apis.buenosaires.gob.ar:443/colectivos/vehiclePositionsSimple?agency_id=${agencyId}&client_id=cb6b18c84b3b484d98018a791577af52&client_secret=3e3DB105Fbf642Bf88d5eeB8783EE1E6`;
-    fetch(apiUrl)
-      .then((response) => response.json())
-      .then((data) =>
-        setData((prevData) => ({ ...prevData, [agencyId]: data }))
-      )
-      .catch((error) =>
-        console.error(`Error al obtener datos de la API ${agencyId}:`, error)
-      );
-  };
-
-  useEffect(() => {
-    if (opcionSeleccionada) {
-      const fetchDataForOption = {
-        25: setDatosApi,
-        71: setDatosApi,
-        5: setDatosApi,
-        55: setDatosApi,
-        2: setDatosApi,
-        103: setDatosApi,
-        8: setDatosApi,
-        92: setDatosApi,
-        172: setDatosApi,
-        84: setDatosApi,
-        146: setDatosApi,
-        105: setDatosApi,
-        26: setDatosApi,
-        132: setDatosApi,
-        165: setDatosApi,
-        141: setDatosApi,
-        36: setDatosApi,
-        143: setDatosApi,
-        15: setDatosApi,
-      };
-      fetchData(opcionSeleccionada, fetchDataForOption[opcionSeleccionada]);
-    }
-  }, [opcionSeleccionada]);
-
-  const renderMarkers = (data) =>
-    data.map((dato, index) => (
-      <Marker position={[dato.latitude, dato.longitude]} key={index}>
-        <Popup>
-          <span role="img" aria-label="emoji">
-            {" "}
-            🚌{" "}
-          </span>{" "}
-          <br />
-          Line {dato.agency_id} <br />
-          Velocity {Math.round(dato.speed)} <br />
-          Destiny {dato.trip_headsign} <br />
-          ID {dato.id} <br />
-          Agency {dato.agency_name}
-        </Popup>
-      </Marker>
-    ));
-
-  return (
-    <>
-      <select
-        className="selectLine"
-        value={opcionSeleccionada}
-        onChange={(e) => setOpcionSeleccionada(e.target.value)}
-      >
-        <option value="">Elija una línea</option>
-        <option value="2">línea 2 </option>
-        <option value="5">línea 5 </option>
-        <option value="8">línea 8</option>
-        <option value="15"> línea 15</option>
-        <option value="25"> línea 25</option>
-        <option value="26">línea 26 </option>
-        <option value="36">línea 36</option>
-        <option value="55"> línea 55</option>
-        <option value="92">línea 92 </option>
-        <option value="103">línea 103</option>
-        <option value="105"> línea 105</option>
-        <option value="132"> línea 132</option>
-        <option value="141">línea 141 </option>
-        <option value="143">línea 143</option>
-        <option value="146"> línea 146</option>
-        <option value="165"> línea 165</option>
-        <option value="172">línea 172 </option>
-      </select>
-
-      <MapContainer
-        center={[-34.68661, -58.4494]}
-        zoom={10}
-        scrollWheelZoom={true}
-      >
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        {opcionSeleccionada &&
-          renderMarkers(datosApi[opcionSeleccionada] || [])}
-      </MapContainer>
-    </>
-  );
-};
-
-export default Map;

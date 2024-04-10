@@ -1,36 +1,23 @@
 import styled from "styled-components";
 import { DivCardUV, DivTextUV } from "./CardUV";
-//import data from "./data";
+
 const DivCardSunriseSunset = styled(DivCardUV)``;
 const DivTextunriseSunset = styled(DivTextUV)``;
 
 const RiseSetStyled = styled.p`
-font-size: 150%;
-text-align: center;
-`
+  font-size: 150%;
+  text-align: center;
+`;
 
 const sunriseSunset = {
-  riseSet : {
-    "name": "SUNRISE/SUNSET",
-    "iconRise": "☀️",
-    "iconSet": "🌙"
-  }
-}
-//
-//const dayHourRise = data["daily"]["sunrise"];
-//console.log(dayHourRise)
-//const horaRise = dayHourRise.toString()
-//const formatHoraRise = horaRise.slice(11, 16)
+  riseSet: {
+    name: "SUNRISE/SUNSET",
+    iconRise: "☀️",
+    iconSet: "🌙",
+  },
+};
 
-//const dayHourSet = data["daily"]["sunset"];
-
-//const horaSet = dayHourSet.toString()
-//const formatHoraSet = horaSet.slice(11, 16)
-
-const cardSunriseSunset = ({sunrise, sunset}) => {
-
-
-
+const cardSunriseSunset = ({ sunrise, sunset }) => {
   return (
     <>
       <DivCardSunriseSunset>

@@ -12,7 +12,6 @@ const DivContainer = styled.div`
   max-width: 90%;
   margin: auto;
   display: grid;
-  
 `;
 const DivContainerCards = styled.div`
   display: grid;
@@ -23,39 +22,52 @@ const DivContainerCards = styled.div`
 `;
 
 const MeteoCards = () => {
-  const { uvIndexMax, sunrise, sunset, windStatus, humidity, hourlyVisibility, rainProbability } = useWeather();
+  const {
+    uvIndexMax,
+    sunrise,
+    sunset,
+    windStatus,
+    humidity,
+    hourlyVisibility,
+    rainProbability,
+  } = useWeather();
   const sunRiseDate = new Date(sunrise);
-  const sunRiseHour = `${String(sunRiseDate.getHours()).padStart(2, '0')}:${String(sunRiseDate.getMinutes()).padStart(2, '0')}`;
+  const sunRiseHour = `${String(sunRiseDate.getHours()).padStart(
+    2,
+    "0"
+  )}:${String(sunRiseDate.getMinutes()).padStart(2, "0")}`;
 
   const sunSetDate = new Date(sunset);
   const sunSetHour = `${sunSetDate.getHours()}:${sunSetDate.getMinutes()}`;
 
-  
+  let addHumidity = "";
+  let humidityMedia = "";
+  if (humidity) {
+    addHumidity = humidity.reduce((acumulador, valor) => acumulador + valor, 0);
 
-let addHumidity = "";
-let humidityMedia = ""
-if(humidity){
+    humidityMedia = Math.round(addHumidity / humidity.length);
+  }
 
-addHumidity  = humidity.reduce((acumulador, valor) => acumulador + valor, 0);
-
-humidityMedia = Math.round(addHumidity/humidity.length)
-
-}
-
-let addVisibility = "";
-let visibilityAverage = "";
-if(hourlyVisibility){
-addVisibility  = hourlyVisibility.reduce((acumulador, valor) => acumulador + valor, 0);
-visibilityAverage = Math.round(addVisibility/hourlyVisibility.length)
-
-} 
-let addRainProbability = "";
-let rainProbabilityAverage = "";
-if(rainProbability){
-addRainProbability  = rainProbability.reduce((acumulador, valor) => acumulador + valor, 0);
-rainProbabilityAverage = Math.round(addRainProbability/rainProbability.length)
-}
-
+  let addVisibility = "";
+  let visibilityAverage = "";
+  if (hourlyVisibility) {
+    addVisibility = hourlyVisibility.reduce(
+      (acumulador, valor) => acumulador + valor,
+      0
+    );
+    visibilityAverage = Math.round(addVisibility / hourlyVisibility.length);
+  }
+  let addRainProbability = "";
+  let rainProbabilityAverage = "";
+  if (rainProbability) {
+    addRainProbability = rainProbability.reduce(
+      (acumulador, valor) => acumulador + valor,
+      0
+    );
+    rainProbabilityAverage = Math.round(
+      addRainProbability / rainProbability.length
+    );
+  }
 
   return (
     <DivContainer>

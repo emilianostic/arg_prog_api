@@ -22,50 +22,42 @@ body {
 .container {
   display: flex;
 }
-  .clear {
-  
-  width: 50%;  
+.clear {
+  width: 50%;
   box-sizing: border-box;
-  background-image: url("./components/img/clear sky.jpg");  
-
-} 
+  background-image: url("./components/img/clear sky.jpg");
+}
 
 .overcast {
   /*  min-height: 100vh;
    width: 100%;  */
-   box-sizing: border-box;
-   background-image: url("./components/img/overcast.jpeg");  
- 
- } 
- .rain {
+  box-sizing: border-box;
+  background-image: url("./components/img/overcast.jpeg");
+}
+.rain {
   /*  min-height: 100vh;
    width: 100%;  */
-   box-sizing: border-box;
-   background-image: url("./components/img/rain.jpg");  
- 
- } 
- .fog {
+  box-sizing: border-box;
+  background-image: url("./components/img/rain.jpg");
+}
+.fog {
   /*  min-height: 100vh;
    width: 100%;  */
-   box-sizing: border-box;
-   background-image: url("./components/img/fog.jpg");  
- 
- } 
- .snow {
+  box-sizing: border-box;
+  background-image: url("./components/img/fog.jpg");
+}
+.snow {
   /*  min-height: 100vh;
    width: 100%;  */
-   box-sizing: border-box;
-   background-image: url("./components/img/snow.jpg");  
- 
- } 
- .storm {
+  box-sizing: border-box;
+  background-image: url("./components/img/snow.jpg");
+}
+.storm {
   /*  min-height: 100vh;
    width: 100%;  */
-   box-sizing: border-box;
-   background-image: url("./components/img/storm.jpeg");  
- 
- } 
-
+  box-sizing: border-box;
+  background-image: url("./components/img/storm.jpeg");
+}
 
 /* .high{
 margin-bottom: 1%;
@@ -73,7 +65,7 @@ margin-left: 29%;
 } */
 .meteorology {
   display: flex;
- 
+
   height: 45%;
   width: 100%;
   margin-top: 2%;
@@ -87,22 +79,20 @@ margin-left: 29%;
 
 .temps {
   width: 100%; /* El div ocupará el 100% del ancho del contenedor padre */
-    /*max-width: 500px;  Establece un ancho máximo */
-    height: auto; /* Permite que la altura se ajuste automáticamente según el contenido */
+  /*max-width: 500px;  Establece un ancho máximo */
+  height: auto; /* Permite que la altura se ajuste automáticamente según el contenido */
 
- display: flex;
+  display: flex;
   align-items: center;
-  
 }
-.graph{
+.graph {
   display: block;
- 
 }
 
 h3 {
   font-size: small;
   color: rgb(24, 24, 12);
-  text-shadow: -2px -2px  3px white;
+  text-shadow: -2px -2px 3px white;
 }
 
 p {
@@ -114,26 +104,26 @@ p {
   width: 100wh;
   height: 100vh;
 }
-.selector{
+.selector {
   background: transparent;
-     border: none;
-     font-weight: bold;
-     font-size: 100%;
-     height: 50%;
-     padding: 1%;
-     width: 40%;
-     margin-left: 4%;
-     color: rgb(24, 24, 12);
-     text-shadow: -2px -2px  3px white;
-} 
+  border: none;
+  font-weight: bold;
+  font-size: 100%;
+  height: 50%;
+  padding: 1%;
+  width: 40%;
+  margin-left: 4%;
+  color: rgb(24, 24, 12);
+  text-shadow: -2px -2px 3px white;
+}
 
-.selectLine{
+.selectLine {
   background: transparent;
   border: none;
   font-size: 100%;
 }
 
-.temperature{
+.temperature {
   width: 100wh;
   height: 100vh;
 }

@@ -1,19 +1,15 @@
 import { createContext, useState, useEffect, useContext } from "react";
 import FetchDataTraffic from "./FetchDataTraffic";
-import styled from "styled-components"
+import styled from "styled-components";
 
 const TrafficContext = createContext();
 const DivLoading = styled.div`
- margin-left: 50%;
-  
- 
+  margin-left: 50%;
 `;
-
 
 export function TrafficContextProvider({ children }) {
   const [dataTraffic, setDataTraffic] = useState(null);
   const [loading, setLoading] = useState(true);
-  
 
   useEffect(() => {
     setLoading(true);
@@ -33,8 +29,6 @@ export function TrafficContextProvider({ children }) {
     fetchTrafficApi();
   }, []);
 
-
-
   if (loading) {
     return <DivLoading>Cargando...</DivLoading>;
   }
@@ -44,7 +38,6 @@ export function TrafficContextProvider({ children }) {
       value={{
         dataTraffic,
         loading,
-      
       }}
     >
       {children}

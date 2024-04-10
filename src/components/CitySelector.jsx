@@ -1,7 +1,6 @@
 import { useWeather } from "../context/WeatherDataContext";
 import "../styles.css";
 
-
 function CitySelect() {
   const { city, handleCityChange } = useWeather();
 
@@ -17,9 +16,8 @@ function CitySelect() {
         <option value="madrid">Madrid</option>
         <option value="hasenkamp">Hasenkamp</option>
       </select>
-      </>
-  
+    </>
   );
 }
 
-export default CitySelect
+export default CitySelect;

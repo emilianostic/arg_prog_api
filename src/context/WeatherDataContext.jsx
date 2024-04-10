@@ -1,16 +1,15 @@
 import { createContext, useState, useEffect, useContext } from "react";
 import FetchData from "../components/FetchData";
 
-
 const cityCoordinates = {
-  parana: { latitude: "-31.7327", longitude: "-60.529"},//Parana
-  caballito: { latitude: "-34.6226", longitude: "-58.441"},//Caball
-  parquePatricios: { latitude: "-34.6382", longitude: "-58.4014" },//PP
+  parana: { latitude: "-31.7327", longitude: "-60.529" },
+  caballito: { latitude: "-34.6226", longitude: "-58.441" },
+  parquePatricios: { latitude: "-34.6382", longitude: "-58.4014" },
   neuquen: { latitude: "-38.9516", longitude: "-68.0591" },
-  sanbe: {latitude: "-31.7837", longitude: "-60.4416"},
-  gualeguay: {latitude: "-33.1416", longitude: "-59.3097"},
-  madrid: {latitude: "40.4165", longitude:"-3.7026"},
-  hasenkamp: {latitude: "-31.5123", longitude:"-59.8355"}
+  sanbe: { latitude: "-31.7837", longitude: "-60.4416" },
+  gualeguay: { latitude: "-33.1416", longitude: "-59.3097" },
+  madrid: { latitude: "40.4165", longitude: "-3.7026" },
+  hasenkamp: { latitude: "-31.5123", longitude: "-59.8355" },
 };
 
 const WeatherDataContext = createContext();
@@ -29,11 +28,10 @@ export function WeatherDataContextProvider({ children }) {
   const [weatherCode2, setWeatherCode2] = useState(null);
   const [minTemperature_2m, setMinTemperature_2m] = useState(null);
   const [maxTemperature_2m, setMaxTemperature_2m] = useState(null);
-  const [dateFormat, setDateFormat] = useState(null); 
+  const [dateFormat, setDateFormat] = useState(null);
   const [actualTemp, setActualTemp] = useState(null);
   const [dailyTemp, setDailyTemp] = useState(null);
   const [hourlyTime, setHourlyTime] = useState(null);
-
 
   useEffect(() => {
     setLoading(true);
@@ -57,7 +55,6 @@ export function WeatherDataContextProvider({ children }) {
         setDateFormat(data.current_weather.time);
         setWeatherCode(data.current_weather.weathercode);
         setWeatherCode2(data.current_weather.weathercode);
-       
 
         console.log(data.current_weather.weathercode);
       } catch (error) {
@@ -97,7 +94,6 @@ export function WeatherDataContextProvider({ children }) {
         loading,
         city,
         handleCityChange,
-       
       }}
     >
       {children}
