@@ -8,7 +8,7 @@ export const DivCardActualTemp = styled.div`
   width: 60%;
 `;
 const PActualTemp = styled.p`
-  font-size: 300%;
+  font-size: 400%;
 `;
 
 const CardActualTemp = ({ actualTemp, weatherCode, weatherCode2 }) => {

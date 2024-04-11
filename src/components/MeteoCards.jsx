@@ -38,7 +38,7 @@ const MeteoCards = () => {
   )}:${String(sunRiseDate.getMinutes()).padStart(2, "0")}`;
 
   const sunSetDate = new Date(sunset);
-  const sunSetHour = `${sunSetDate.getHours()}:${sunSetDate.getMinutes()}`;
+  const sunSetHour = `${String(sunSetDate.getHours()).padStart(2, "0")}:${String(sunSetDate.getMinutes()).padStart(2, "0")}`;
 
   let addHumidity = "";
   let humidityMedia = "";
