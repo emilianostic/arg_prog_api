@@ -8,7 +8,7 @@ const cityCoordinates = {
   neuquen: { latitude: "-38.9516", longitude: "-68.0591" },
   sanbe: { latitude: "-31.7837", longitude: "-60.4416" },
   gualeguay: { latitude: "-33.1416", longitude: "-59.3097" },
-  madrid: { latitude: "40.4165", longitude: "-3.7026" },
+  trescantos: { latitude: "40.6009", longitude: "-3.7081" },
   hasenkamp: { latitude: "-31.5123", longitude: "-59.8355" },
 };
 
@@ -55,8 +55,6 @@ export function WeatherDataContextProvider({ children }) {
         setDateFormat(data.current_weather.time);
         setWeatherCode(data.current_weather.weathercode);
         setWeatherCode2(data.current_weather.weathercode);
-
-        console.log(data.current_weather.weathercode);
       } catch (error) {
         console.log("Error:", error);
       }

@@ -31,30 +31,40 @@ body {
 .overcast {
   /*  min-height: 100vh;
    width: 100%;  */
+
+  width: 50%;
   box-sizing: border-box;
   background-image: url("./components/img/overcast.jpeg");
 }
 .rain {
   /*  min-height: 100vh;
    width: 100%;  */
+  width: 50%;
+
   box-sizing: border-box;
   background-image: url("./components/img/rain.jpg");
 }
 .fog {
   /*  min-height: 100vh;
    width: 100%;  */
+  width: 50%;
+
   box-sizing: border-box;
   background-image: url("./components/img/fog.jpg");
 }
 .snow {
   /*  min-height: 100vh;
    width: 100%;  */
+  width: 50%;
+
   box-sizing: border-box;
   background-image: url("./components/img/snow.jpg");
 }
 .storm {
   /*  min-height: 100vh;
    width: 100%;  */
+  width: 50%;
+
   box-sizing: border-box;
   background-image: url("./components/img/storm.jpeg");
 }

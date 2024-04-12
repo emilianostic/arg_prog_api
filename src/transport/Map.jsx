@@ -5,7 +5,7 @@ import "../styles.css";
 const Map = () => {
   const [opcionSeleccionada, setOpcionSeleccionada] = useState("");
   const [datosApi, setDatosApi] = useState({});
-
+//  const [dataTraffic, setDataTraffic] = useState(null);
   const fetchData = (agencyId, setData) => {
     const apiUrl = `https://datosabiertos-transporte-apis.buenosaires.gob.ar:443/colectivos/vehiclePositionsSimple?agency_id=${agencyId}&client_id=cb6b18c84b3b484d98018a791577af52&client_secret=3e3DB105Fbf642Bf88d5eeB8783EE1E6`;
     fetch(apiUrl)
@@ -45,6 +45,39 @@ const Map = () => {
     }
   }, [opcionSeleccionada]);
 
+  useEffect(() => {
+    let intervalId;
+  
+    if (opcionSeleccionada) {
+      // Definir una función para obtener los datos de la API
+      const fetchDataForOption = (agencyId) => {
+        const apiUrl = `https://datosabiertos-transporte-apis.buenosaires.gob.ar:443/colectivos/vehiclePositionsSimple?agency_id=${agencyId}&client_id=cb6b18c84b3b484d98018a791577af52&client_secret=3e3DB105Fbf642Bf88d5eeB8783EE1E6`;
+        fetch(apiUrl)
+          .then((response) => response.json())
+          .then((data) => {
+            setDatosApi((prevData) => ({ ...prevData, [agencyId]: data }));
+          })
+          .catch((error) =>
+            console.error(`Error al obtener datos de la API ${agencyId}:`, error)
+          );
+      };
+  
+      // Obtener datos inicialmente
+      fetchDataForOption(opcionSeleccionada);
+  
+      // Establecer intervalo para obtener datos cada 31 segundos
+      intervalId = setInterval(() => {
+        fetchDataForOption(opcionSeleccionada);
+      }, 31000);
+    }
+  
+    // Limpiar el intervalo cuando cambia la opción seleccionada
+    return () => clearInterval(intervalId);
+  }, [opcionSeleccionada]);
+
+
+
+ 
   const renderMarkers = (data) =>
     data.map((dato, index) => (
       <Marker position={[dato.latitude, dato.longitude]} key={index}>

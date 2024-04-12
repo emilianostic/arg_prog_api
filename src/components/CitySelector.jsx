@@ -13,7 +13,7 @@ function CitySelect() {
         <option value="neuquen">Neuquén</option>
         <option value="sanbe">San Benito</option>
         <option value="gualeguay">Gualeguay</option>
-        <option value="madrid">Madrid</option>
+        <option value="trescantos">Tres Cantos</option>
         <option value="hasenkamp">Hasenkamp</option>
       </select>
     </>
