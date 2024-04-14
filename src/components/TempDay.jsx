@@ -15,6 +15,9 @@ const DivTempDay = styled.div`
   background-size: cover;
   background-position: center center;
   margin-left: auto; /* Esto justificará el componente a la derecha */
+  &:hover {
+    transform: scale(1.1);
+  }
 `;
 
 let formattedHours = "";

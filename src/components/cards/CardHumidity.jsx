@@ -6,7 +6,8 @@ const DivTextHumidity = styled(DivTextUV)``;
 const HumidityStyled = styled.p`
   font-size: 200%;
   text-align: center;
-  padding: 20%;
+  padding: 10%;
+ 
 `;
 const humiditySymbol = {
   uno: {

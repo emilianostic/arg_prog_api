@@ -7,6 +7,7 @@ const DivTextunriseSunset = styled(DivTextUV)``;
 const RiseSetStyled = styled.p`
   font-size: 150%;
   text-align: center;
+ 
 `;
 
 const sunriseSunset = {
