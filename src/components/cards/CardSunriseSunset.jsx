@@ -7,7 +7,9 @@ const DivTextunriseSunset = styled(DivTextUV)``;
 const RiseSetStyled = styled.p`
   font-size: 150%;
   text-align: center;
- 
+  &:hover {
+    transform: scale(1.3);
+  }
 `;
 
 const sunriseSunset = {

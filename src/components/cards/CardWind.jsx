@@ -4,6 +4,9 @@ import { DivCardUV, DivTextUV } from "./CardUV";
 export const IconStyled = styled.h2`
   font-size: 200%;
   text-align: center;
+  &:hover {
+    transform: scale(1.3);
+  }
 `;
 const DivCardWind = styled(DivCardUV)``;
 const DivTextWind = styled(DivTextUV)``;

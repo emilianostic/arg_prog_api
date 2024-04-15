@@ -11,9 +11,7 @@ export const DivCardUV = styled.div`
   overflow: hidden;
   background-size: cover;
   background-position: center center;
-  &:hover {
-    transform: scale(1.2);
-  }
+ 
 `;
 export const DivTextUV = styled.div`
   height: 100%;
@@ -25,6 +23,9 @@ export const DivTextUV = styled.div`
 const UVStyled = styled.p`
   font-size: 200%;
   text-align: center;
+  &:hover {
+    transform: scale(1.3);
+  }
 `;
 
 

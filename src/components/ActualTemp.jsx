@@ -6,8 +6,7 @@ export const DivCardActualTemp = styled.div`
   text-align: center;
   margin: 7.5%;
   width: 60%;
-  &:hover {
-    transform: scale(1.4);
+  
   }
 `;
 const PActualTemp = styled.p`

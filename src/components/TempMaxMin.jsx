@@ -12,8 +12,7 @@ const DivTempMaxMin = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  &:hover {
-    transform: scale(1.2);
+ 
   }
 `;
 const DivMaxMin = styled.div`

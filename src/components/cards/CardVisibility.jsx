@@ -6,6 +6,9 @@ const DivTextVisibility = styled(DivTextUV)``;
 const VisibilityStyled = styled.p`
   font-size: 200%;
   text-align: center;
+  &:hover {
+    transform: scale(1.3);
+  }
   
 `;
 const visibilitySymbol = {

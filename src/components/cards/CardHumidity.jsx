@@ -7,7 +7,9 @@ const HumidityStyled = styled.p`
   font-size: 200%;
   text-align: center;
   padding: 10%;
- 
+  &:hover {
+    transform: scale(1.3);
+  }
 `;
 const humiditySymbol = {
   uno: {
