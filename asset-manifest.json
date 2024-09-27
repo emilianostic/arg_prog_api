@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/arg_prog_api/static/css/main.d9639905.css",
-    "main.js": "/arg_prog_api/static/js/main.1bff0e1a.js",
+    "main.css": "/arg_prog_api/static/css/main.e6306a27.css",
+    "main.js": "/arg_prog_api/static/js/main.993c98b6.js",
     "static/js/787.65a1df43.chunk.js": "/arg_prog_api/static/js/787.65a1df43.chunk.js",
     "static/media/overcast.jpeg": "/arg_prog_api/static/media/overcast.379f307924811a6db94b.jpeg",
     "static/media/fog.jpg": "/arg_prog_api/static/media/fog.a32a602ab472130828d9.jpg",
@@ -10,12 +10,12 @@
     "static/media/rain.jpg": "/arg_prog_api/static/media/rain.46a83905fc2d17154161.jpg",
     "static/media/snow.jpg": "/arg_prog_api/static/media/snow.69030876ce007f48c817.jpg",
     "index.html": "/arg_prog_api/index.html",
-    "main.d9639905.css.map": "/arg_prog_api/static/css/main.d9639905.css.map",
-    "main.1bff0e1a.js.map": "/arg_prog_api/static/js/main.1bff0e1a.js.map",
+    "main.e6306a27.css.map": "/arg_prog_api/static/css/main.e6306a27.css.map",
+    "main.993c98b6.js.map": "/arg_prog_api/static/js/main.993c98b6.js.map",
     "787.65a1df43.chunk.js.map": "/arg_prog_api/static/js/787.65a1df43.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d9639905.css",
-    "static/js/main.1bff0e1a.js"
+    "static/css/main.e6306a27.css",
+    "static/js/main.993c98b6.js"
   ]
 }
